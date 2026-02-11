@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+    <menuitem id="rs_hello_menu_root" name="Hello Messages" sequence="10"/>
+
+    
+    <record id="rs_hello_action" model="ir.actions.act_window">
+        <field name="name">rs.hello.action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">rs.hello</field>
+        <field name="view_mode">list,form</field>                
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                this is a HEllo Messages database
+            </p><p>
+                You can add new messages to this database            
+            </p>
+        </field>
+    </record>
+
+    
+    <menuitem id="rs_hello_menu_act" name="Hello Message" parent="rs_hello_menu_root" action="rs_hello_action" sequence="10"/>
+</odoo>
