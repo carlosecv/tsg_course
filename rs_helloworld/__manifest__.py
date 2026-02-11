@@ -27,8 +27,9 @@ Hello World Module.
         ],
     },
     'data': [
+        'security/security.xml',
         'security/ir.model.access.csv',
-        'views/rs_hello_menus.xml',
+        'views/rs_helloworld_menus.xml',
     ],
     'demo': [
     ],

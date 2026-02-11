@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+    <record id="rs_hello_user" model="res.groups">
+        <field name="name">Hello Messages User</field>
+    </record>
+
+    <record id="rs_hello_admin" model="res.groups">
+        <field name="name">Hello Messages Administrator</field>
+    </record>
+
+</odoo>
