@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_estate_property_rs_realstate_salesman,access.estate.property.rs.realstate.salesman,model_estate_property,rs_realstate_salesman,1,1,1,0
+access_estate_property_type_rs_realstate_salesman,rs_realstate.access.estate.property.type.rs.realstate.salesman,model_estate_property_type,rs_realstate_salesman,1,0,0,0
+access_estate_property_offer_rs_realstate_salesman,rs_realstate.access.estate.property.offer.rs.realstate.salesman,model_estate_property_offer,rs_realstate_salesman,1,1,1,0
+access_estate_property_rs_realstate_admin,access.estate.property.rs.realstate.admin,model_estate_property,rs_realstate_admin,1,1,1,1
+access_estate_property_type_rs_realstate_admin,rs_realstate.access.estate.property.type.rs.realstate.admin,model_estate_property_type,rs_realstate_admin,1,1,1,1
+access_estate_property_offer_rs_realstate_admin,rs_realstate.access.estate.property.offer.rs.realstate.admin,model_estate_property_offer,rs_realstate_admin,1,1,1,1

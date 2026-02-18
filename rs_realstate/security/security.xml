@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+    <record id="rs_realstate_salesman" model="res.groups">
+        <field name="name">Salesman Properties</field>
+    </record>
+
+    <record id="rs_realstate_admin" model="res.groups">
+        <field name="name">Property Administrator</field>
+    </record>
+
+    
+</odoo>
