@@ -29,7 +29,12 @@ Hello World Module.
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
+        'data/decimal_precision_data.xml',
+        'views/rs_hello_views.xml',
+        
         'views/rs_helloworld_menus.xml',
+
+
     ],
     'demo': [
     ],

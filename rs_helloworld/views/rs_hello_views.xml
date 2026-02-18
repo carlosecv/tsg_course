@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- model.name form view -->
+    <record id="rs_hello_view_form" model="ir.ui.view">
+        <field name="name">rs.hello.view.form</field>
+        <field name="model">rs.hello</field>        
+        <field name="arch" type="xml">
+
+            <form string="Messages" create="true" delete="true" edit="true">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" />
+                        <h1><field name="name" placeholder="Describe the item..." /></h1>
+                    </div>
+                    <group colspan="4">
+                        <group>
+                            <field name="partner_id" required="1" />
+                            <field name="message_type" widget="radio"/> 
+                            <field name="age" groups="rs_helloworld.rs_hello_admin" />
+                            <field name="amount"/>
+                        </group>
+                        <group>                            
+                            <label for='publish_start_date' string="Start" />                            
+                            <field name="publish_start_date" nolabel="1" />
+                            <label for='publish_end_date' string="End" />
+                            <field name="publish_end_date" nolabel="1" />                            
+                        </group>                        
+                    </group>
+                    <notebook>
+                        <page name="page_decription" string="Description">
+                            <field name="description"/>                            
+                        </page>                   
+                        <page name="page_note" string="Note">
+                            <field name="note"/>
+                        </page>         
+                    </notebook>
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+
+
+    
+    <record id="rs_hello_view_list" model="ir.ui.view">
+        <field name="name">rs.hello.view.list</field>
+        <field name="model">rs.hello</field>        
+        <field name="mode">primary</field>
+        <field name="priority" eval="16" />
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="name"/>
+                <field name="partner_id" required="1" />
+                <field name="message_type" /> 
+                <field name="age" optional="hide" />                
+                <field name="publish_start_date"  />
+                <field name="publish_end_date"  />
+                <field name="amount" sum="Total Amount" />
+            </list>
+        </field>
+    </record>
+    
+    <!-- model.name search view -->
+    <record id="rs_hello_view_search" model="ir.ui.view">
+        <field name="name">rs.hello.view.search</field>
+        <field name="model">rs.hello</field>
+        <field name="arch" type="xml">
+            <search string="Search Description">
+                <field name="name"/>
+                <field name="message_type" />                                                                   
+                <filter string="Advertising"
+                    name="filter_advertising"
+                    domain="[('message_type','=','adv')]"                    
+                    help="" />
+                <filter string="Social"
+                    name="filter_social"
+                    domain="[('message_type','=','soc')]"                    
+                    help="" />      
+                <separator /> 
+          
+                <filter string="&gt;50"
+                    name="filter_50"
+                    domain="[('age','&gt;',50)]"                    
+                    help="" />                
+                <filter string="&lt;18"
+                    name="filter_18"
+                    domain="[('age','&lt;',18)]"                    
+                    help="" />      
+                <separator />           
+                <filter string="Adult"
+                    name="filter_adult"
+                    domain="[('age','&gt;=',18),('age','&lt;',55)]"                    
+                    help="" />                
+
+                <group>
+                    
+                    <filter string="Message Type"
+                        name="group_message_type"
+                        context="{'group_by': 'message_type'}"
+                        help="Group by Message Type" />
+                     <filter string="Age"
+                        name="group_age"
+                        context="{'group_by': 'age'}"
+                        help="Group by Age" />
+                </group>
+                <searchpanel>
+                    <field name="message_type" icon="fa-bars" string="Type" 
+                    enable_counters="1"
+                    />                    
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="rs_hello_action" model="ir.actions.act_window">
+        <field name="name">Hello Messages</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">rs.hello</field>
+        <field name="view_mode">list,form</field>                
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                this is a Hello Messages database
+            </p><p>
+                You can add new messages to this database            
+            </p>
+        </field>
+    </record>
+    
+</odoo>
+
