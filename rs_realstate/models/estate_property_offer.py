@@ -5,8 +5,8 @@ class EstatePropertyOffer(models.Model):
     _name = 'estate.property.offer'
     _description = 'Property Offer'
 
-    _rec_name = 'property_id'
-    _order = 'property_id ASC'
+    _rec_name = 'partner_id'
+    _order = 'partner_id ASC'
 
     
     def _default_currency_id(self):
