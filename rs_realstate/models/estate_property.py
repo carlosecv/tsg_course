@@ -47,8 +47,24 @@ class EstateProperty(models.Model):
     
     state = fields.Selection(
         string='State',
-        selection=[('draft', 'New'), ('receive', 'Offert Received'),  ('accepted', 'Offer Accept'),  ('sold', 'Sold')],
+        selection=[('draft', 'New'), 
+                    ('receive', 'Offert Received'),  
+                    ('accepted', 'Offer Accept'),  
+                    ('sold', 'Sold')],
         default='draft',
-        readonly=True,
+        readonly=False,
     )
+    
+    categ_ids = fields.Many2many(
+        string='Category',
+        comodel_name='estate.property.category'
+    )
+    
+    active = fields.Boolean(string='Active',default=True)
+    
+    user_id = fields.Many2one(
+        comodel_name='res.users',
+        string="Salesperson",        
+        readonly=False, index=True,
+        tracking=2,)
     

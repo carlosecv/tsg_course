@@ -5,3 +5,5 @@ access_estate_property_offer_rs_realstate_salesman,rs_realstate.access.estate.pr
 access_estate_property_rs_realstate_admin,access.estate.property.rs.realstate.admin,model_estate_property,rs_realstate_admin,1,1,1,1
 access_estate_property_type_rs_realstate_admin,rs_realstate.access.estate.property.type.rs.realstate.admin,model_estate_property_type,rs_realstate_admin,1,1,1,1
 access_estate_property_offer_rs_realstate_admin,rs_realstate.access.estate.property.offer.rs.realstate.admin,model_estate_property_offer,rs_realstate_admin,1,1,1,1
+access_estate_property_category_rs_realstate_salesman,access.estate.property.category.rs.realstate.salesman,model_estate_property_category,rs_realstate_salesman,1,1,1,0
+access_estate_property_category_rs_realstate_admin,access.estate.property.category.rs.realstate.admin,model_estate_property_category,rs_realstate_admin,1,1,1,1

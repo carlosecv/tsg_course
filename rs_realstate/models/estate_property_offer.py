@@ -35,5 +35,6 @@ class EstatePropertyOffer(models.Model):
     validity_days = fields.Integer(string='Validity Days')
     deadline  = fields.Date(string='Deadline')
     
-
+    sequence = fields.Integer(string='Sequence')
+    
     

@@ -10,6 +10,7 @@
         <field name="priority" eval="16" />    
         <field name="arch" type="xml">
             <list string="Properties" create="true" delete="true" edit="true">
+                <field name="active" invisible="1"/>
                 <field name="name" />
                 <field name="property_type_id"/>
                 <field name="postcode"/>
@@ -19,6 +20,8 @@
                 <field name="living_area"/>
                 <field name="garage"/>
                 <field name="garden"/>
+                <field name="categ_ids" widget="many2many_tags" />                
+                <field name="state" decoration-success="state == 'sold'" decoration-info="state == 'draft'" decoration-primary="state == 'accepted'"  widget="badge" optional="hide"/>
             </list>
         </field>
     </record>
@@ -31,16 +34,23 @@
         <field name="priority" eval="16" />        
         <field name="arch" type="xml">
             <form string="Properties" create="true" delete="true" edit="true">    
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,receive,accepted,sold" options="{'clickable': '1'}" />
+                </header>
                 <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <field name="active" invisible="1"/>
                     <div class="oe_title">
                         <label for="name" class="oe_edit_only" />
                         <h1>
                             <field name="name" class="oe_inline"
                                 placeholder="name" />
                         </h1>
+                        <field name="categ_ids" widget="many2many_tags" />
                     </div>
                     <group colspan="4" >
                         <group>
+                            
                             <field name="property_type_id"/>
                             <field name="postcode"/>
                             <field name="start_date"/>
@@ -54,6 +64,7 @@
                     <notebook>                        
                         <page string="Description" >
                             <group>
+                            <field name="user_id" widget="many2one_avatar_user"/>
                             <field name="bedrooms"/>
                             <field name="living_area"/>
                             <field name="garage"/>
@@ -62,7 +73,15 @@
                         </page>
                         
                         <page string="Offers" >
-                            <field name="offer_ids"/>                            
+                            <field name="offer_ids">                                                        
+                                <list string="Offers" create="true" delete="true" edit="true">
+                                    <field name="sequence" widget="handle" />
+                                    <field name="partner_id"/>
+                                    <field name="currency_id"/>
+                                    <field name="price"/>
+                                    <field name="state"/>                                    
+                                </list>                            
+                            </field>
                         </page>
                         
                                                 
@@ -82,7 +101,11 @@
         <field name="priority" eval="16" />        
         <field name="arch" type="xml">
             <search string="Properties">
-                <field name="name" />
+                <field name="name" />                                
+                <separator />                                    
+                <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>                                
+                <separator/>
+                <filter string="Create Date" name="filter_create_date" date="create_date"/>
                 <group>
                     <field name="state"/>
                 </group>
