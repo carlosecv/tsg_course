@@ -1,4 +1,4 @@
-from odoo import models,fields,_
+from odoo import models,fields,api,_
 
 class EstateProperty(models.Model):
     _name = 'estate.property'
@@ -11,10 +11,33 @@ class EstateProperty(models.Model):
     def _default_currency_id(self):
         return self.env.user.company_id.currency_id
 
+    
+    @api.model_create_multi
+    def create(self, vals_list):
+        """
+            Create a new record for a model ModelName
+            @param values: provides a data for new record
+    
+            @return: returns a id of new record
+        """                
+        for vals in vals_list:
+            if vals.get('name', _("New")) == _("New"):
+                vals['name'] = self.env['ir.sequence'].with_company(vals.get('company_id')).next_by_code(
+                    'estate.property') or _("New")
+        # n next line of code
+        # c continue without stop
+        # l show lines of code
+        # CTRL-D CTRL-INTERRUP stop all
+
+        res = super().create(vals_list)
+        return res
+    
+
     name = fields.Char(
         string='Anounce Title',
         required=True,
         default=lambda self: _('New'),
+        readonly=False,
         copy=False
     )
     
@@ -68,3 +91,10 @@ class EstateProperty(models.Model):
         readonly=False, index=True,
         tracking=2,)
     
+    brochure = fields.Binary(string='Brochure')
+
+    brochure2 = fields.Binary(string='Brochure2',attachment=False)
+    
+    signature = fields.Binary(
+    string="Firma"
+)

@@ -44,7 +44,7 @@
                         <label for="name" class="oe_edit_only" />
                         <h1>
                             <field name="name" class="oe_inline"
-                                placeholder="name" />
+                                placeholder="name" readonly="1" force_save="1" />
                         </h1>
                         <field name="categ_ids" widget="many2many_tags" />
                     </div>
@@ -83,7 +83,18 @@
                                 </list>                            
                             </field>
                         </page>
-                        
+                        <page name="page_brochure" string="Brochure">
+                            <group>
+                                <field name="brochure"/>
+                                <field name="brochure2"/>
+                            </group>
+                        </page>
+                        <page name="page_signature" string="Signature">
+                            <group>                        
+                                <field name="signature" widget="signature"/>
+                            </group>
+                        </page>
+                                              
                                                 
                     </notebook>
                     

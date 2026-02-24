@@ -26,6 +26,7 @@ Long description of module's purpose
         'security/ir.model.access.csv',
         'views/estate_property_views.xml',
         'views/templates.xml',
+        'data/ir_sequence.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
