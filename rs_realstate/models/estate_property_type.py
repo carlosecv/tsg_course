@@ -13,4 +13,4 @@ class EstatePropertyType(models.Model):
         copy=False
     )
 
-    
+    active = fields.Boolean(string='Available', default=True)    
