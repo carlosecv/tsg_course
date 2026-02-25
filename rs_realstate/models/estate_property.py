@@ -96,5 +96,27 @@ class EstateProperty(models.Model):
     brochure2 = fields.Binary(string='Brochure2',attachment=False)
     
     signature = fields.Binary(
-    string="Firma"
-)
+        string="Firma"
+    )
+
+    image_1920 = fields.Image(
+        string="Imagen",attachment=False,
+        max_width=1920,
+        max_height=1920
+    )
+
+    image_256 = fields.Image(
+        string="Image 256",
+        related="image_1920",
+        max_width=256,
+        max_height=256,
+        store=True
+    )
+
+    image_128 = fields.Image(
+        string="Image 128",
+        related="image_1920",
+        max_width=128,
+        max_height=128,
+        store=True
+    )
