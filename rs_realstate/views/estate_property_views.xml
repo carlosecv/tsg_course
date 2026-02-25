@@ -12,6 +12,7 @@
             <list string="Properties" create="true" delete="true" edit="true">
                 <field name="active" invisible="1"/>
                 <field name="name" />
+                <field name="partner_id" />
                 <field name="property_type_id"/>
                 <field name="postcode"/>
                 <field name="expected_price"/>
@@ -49,9 +50,10 @@
                         </h1>
                         <field name="categ_ids" widget="many2many_tags" />
                     </div>
+
                     <group colspan="4" >
                         <group>
-                            
+                            <field name="partner_id" />
                             <field name="property_type_id"/>
                             <field name="postcode"/>
                             <field name="start_date"/>

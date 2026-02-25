@@ -47,7 +47,7 @@ class EstateProperty(models.Model):
         ondelete='restrict',
     )
     
-    postcode = fields.Char(string='Zip Code')
+    postcode = fields.Char(string='Zip Code',related="partner_id.zip",readonly=False)
     
     currency_id = fields.Many2one('res.currency',required=True,default=lambda self: self._default_currency_id())
 
@@ -110,7 +110,8 @@ class EstateProperty(models.Model):
         related="image_1920",
         max_width=256,
         max_height=256,
-        store=True
+        store=True,
+        attachment=False
     )
 
     image_128 = fields.Image(
@@ -118,5 +119,13 @@ class EstateProperty(models.Model):
         related="image_1920",
         max_width=128,
         max_height=128,
-        store=True
+        store=True,
+        attachment=False,
+    )
+
+
+    partner_id = fields.Many2one(
+        string='Property Address',
+        comodel_name='res.partner',
+        ondelete='restrict',
     )
