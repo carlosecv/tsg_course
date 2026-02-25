@@ -106,13 +106,17 @@ class EstateProperty(models.Model):
     )
 
     image_256 = fields.Image(
-        string="Imagen 256",attachment=False,
+        string="Image 256",
+        related="image_1920",
         max_width=256,
-        max_height=256
+        max_height=256,
+        store=True
     )
 
     image_128 = fields.Image(
-        string="Imagen 128",attachment=False,
+        string="Image 128",
+        related="image_1920",
         max_width=128,
-        max_height=128
+        max_height=128,
+        store=True
     )
