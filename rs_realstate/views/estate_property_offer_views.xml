@@ -11,6 +11,7 @@
                 <field name="partner_id" />
                 <field name="currency_id" />
                 <field name="price" />
+                <field name="create_date" />
                 <field name="validity_days" />
                 <field name="deadline" />
                 <field name="sequence" />
@@ -48,6 +49,8 @@
                             <field name="price" />
                         </group>
                         <group>
+                            <field name="create_date" />
+                            <field name="elapsed_days"/>
                             <field name="validity_days" />
                             <field name="deadline" />
                             <field name="sequence" />
@@ -68,6 +71,8 @@
             <search string="Properties">
                 <field name="price" />
                 <separator />
+                <!-- <filter name="elapsed_five_days" string="Created more than 5 days" domain="[('elapsed_days', '&gt;', 5)]"
+                />                 -->
                 <group>
                     <field name="state" />
                 </group>
