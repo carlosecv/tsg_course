@@ -6,16 +6,32 @@
         <field name="name">offer.asistant.wizard.view.form</field>
         <field name="model">offer.asistant.wizard</field>
         <field name="arch" type="xml">
-            <form string="">
+           <!-- model.name form view -->
+            <form string="Create Property + Offer">
                 <sheet>
-                    <group>
+                    <group string="Property">
                         <field name="address_id"/>
-                        <field name="currency_id"/>     
-                        <field name="price"/>     
-                        <field name="selling_price"/>     
-                        <field name="user_id"/>                                                     
+                        <field name="user_id"/>
+                        <field name="currency_id"/>
+                        <field name="selling_price"/>
                     </group>
+
+                    <group string="Offer">
+                        <field name="customer_id"/>
+                        <field name="price"/>
+                    </group>
+
                 </sheet>
+
+                <footer>
+                    <button name="action_create_property_and_offer"
+                            type="object"
+                            string="Create"
+                            class="btn-primary"
+                            data-hotkey="c"
+                            />
+                    <button string="Skip" special="cancel" class="btn-secondary"/>
+                </footer>
             </form>
         </field>
     </record>
