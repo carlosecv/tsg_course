@@ -99,6 +99,4 @@
         </field>
     </record>
 
-    <menuitem id="estate_property_offer_menu" name="Offers" parent="estate_properties_menu_root"
-        sequence="10" action="action_estate_property_offer" />
 </odoo>

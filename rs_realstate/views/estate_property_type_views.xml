@@ -57,13 +57,6 @@
         </field>
     </record>
 
-    <!-- Menú (ActionMenu) -->
-    <!-- Lo colocamos dentro del menú raíz que ya creaste en el otro archivo -->
-    <menuitem 
-        id="estate_property_type_menu" 
-        name="Property Types" 
-        parent="estate_properties_menu_root" 
-        action="action_estate_property_type" 
-        sequence="20"/>
+
 
 </odoo>

@@ -27,13 +27,11 @@ Long description of module's purpose
 
         #'reports/estate_property_report.xml',
 
-        'views/estate_property_views.xml',
-        'views/estate_property_type_views.xml',
         'views/estate_property_offer_views.xml',
+        'views/estate_property_views.xml',
+        'views/estate_property_type_views.xml',        
         'wizards/offer_asistant_wizard.xml',
-
-
-
+        'views/rs_realstate_menu.xml',
         'data/ir_sequence.xml',
     ],
     # only loaded in demonstration mode

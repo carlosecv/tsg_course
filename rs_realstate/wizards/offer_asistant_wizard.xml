@@ -29,6 +29,7 @@
                             string="Create"
                             class="btn-primary"
                             data-hotkey="c"
+
                             />
                     <button string="Skip" special="cancel" class="btn-secondary"/>
                 </footer>
@@ -45,6 +46,6 @@
         <field name="target">new</field>        
     </record>
 
-    <menuitem id="offer_asistant_menu" name="Asistant" sequence="10" action="offer_asistant_wizard_action" parent="estate_properties_menu_root"/>                
+    
 
 </odoo>
