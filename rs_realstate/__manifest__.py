@@ -24,10 +24,16 @@ Long description of module's purpose
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
+
+        #'reports/estate_property_report.xml',
+
         'views/estate_property_views.xml',
         'views/estate_property_type_views.xml',
         'views/estate_property_offer_views.xml',
-        'views/templates.xml',
+        'wizards/offer_asistant_wizard.xml',
+
+
+
         'data/ir_sequence.xml',
     ],
     # only loaded in demonstration mode

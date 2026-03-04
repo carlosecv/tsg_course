@@ -26,7 +26,10 @@
             </list>
         </field>
     </record>
-    
+    <!--                 <button name="%(action_report_estate_property)d"
+                    string="Print PDF"
+                    type="action"
+                    class="btn-primary"/> -->
     <!-- Form view for "model" -->
     <record id="view_estate_property_form" model="ir.ui.view">
         <field name="name">view.estate.property.form</field>
@@ -34,11 +37,31 @@
         <field name="mode">primary</field>
         <field name="priority" eval="16" />        
         <field name="arch" type="xml">
-            <form string="Properties" create="true" delete="true" edit="true">    
+            <form string="Properties" create="true" delete="true" edit="true">                
                 <header>
                     <field name="state" widget="statusbar" statusbar_visible="draft,receive,accepted,sold" options="{'clickable': '1'}" />
+                    <button name="%(action_estate_property_offer)d" type="action" string="Offers"                    
+                            context="{'search_default_property_id': id}" />                            
+                    <button name="action_open_estate_property_offers" type="object" string="Open Offers" />
                 </header>
+                
                 <sheet>
+                     <div class="oe_button_box" name="button_box">
+                        <button name="%(action_estate_property_offer)d" 
+                                type="action"
+                                context="{'search_default_property_id': id}"
+                                confirm="This will show you offers for this property. Do you want to proceed?"
+                                invisible="offer_count==0"
+                                widget="statinfo"
+                                icon="fa-id-card">   
+                                 <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_text" >
+                                     Offers
+                                    </span>
+                                    <field name="offer_count"/>                                                             
+                                </div>
+                        </button>
+                     </div>
                     <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
                     <field name="image_1920" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;image_128&quot;}"/>
                     <field name="active" invisible="1"/>

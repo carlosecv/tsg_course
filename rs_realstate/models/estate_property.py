@@ -129,3 +129,30 @@ class EstateProperty(models.Model):
         comodel_name='res.partner',
         ondelete='restrict',
     )
+
+    offer_count = fields.Integer(string='Offers',
+        compute='_compute_offer_count' )
+    
+    @api.depends('offer_ids')
+    def _compute_offer_count(self):
+        for record in self:
+            record.offer_count = len(record.offer_ids)
+    
+    def action_open_estate_property_offers(self):        
+        return {
+            'name': _('Property Offers'),
+            'type': 'ir.actions.act_window',
+            'view_type': 'list',
+            'view_mode': 'list,form',
+            'res_model': 'estate.property.offer',
+            'domain': [('id', 'in', self.ids)],
+            'context': {
+                        'search_default_property_id': self.id,
+                        'default_property_id':self.id,
+                        'default_price': 500000,
+                        'default_currency_id': self.currency_id.id,
+            },
+        }
+        
+    
+    

@@ -31,6 +31,7 @@
             <form string="Properties" create="true" delete="true" edit="true">
                 <header>
                     <field name="state" widget="statusbar" statusbar_visible="draft,accepted,reject,cancel" options="{'clickable': '1'}" />
+                    <button name="message_user" type="object" string="Message to User"/>
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -70,6 +71,7 @@
         <field name="arch" type="xml">
             <search string="Properties">
                 <field name="price" />
+                <field name="property_id" />
                 <separator />
                 <!-- <filter name="elapsed_five_days" string="Created more than 5 days" domain="[('elapsed_days', '&gt;', 5)]"
                 />                 -->

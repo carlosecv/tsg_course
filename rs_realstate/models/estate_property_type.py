@@ -14,3 +14,7 @@ class EstatePropertyType(models.Model):
     )
 
     active = fields.Boolean(string='Available', default=True)    
+
+    _sql_constraints = [
+        ('estate_property_type_name_uniq', 'unique(name)', _('Attribute Name must be unique!'))        
+        ]

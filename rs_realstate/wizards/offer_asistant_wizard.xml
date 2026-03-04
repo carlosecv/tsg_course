@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- model.name form view -->
+    <record id="offer_asistant_wizard_view_form" model="ir.ui.view">
+        <field name="name">offer.asistant.wizard.view.form</field>
+        <field name="model">offer.asistant.wizard</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="address_id"/>
+                        <field name="currency_id"/>     
+                        <field name="price"/>     
+                        <field name="selling_price"/>     
+                        <field name="user_id"/>                                                     
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- model.name action window -->
+    <record id="offer_asistant_wizard_action" model="ir.actions.act_window">
+        <field name="name">offer.asistant.wizard.action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">offer.asistant.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>        
+    </record>
+
+    <menuitem id="offer_asistant_menu" name="Asistant" sequence="10" action="offer_asistant_wizard_action" parent="estate_properties_menu_root"/>                
+
+</odoo>
