@@ -139,7 +139,6 @@ class EstateProperty(models.Model):
             record.offer_count = len(record.offer_ids)
     
     def action_open_estate_property_offers(self):   
-        import pdb;pdb.set_trace()
         context = self.env.context
 
         if context.get('my_flag'):

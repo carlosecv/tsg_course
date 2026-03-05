@@ -106,8 +106,7 @@ class EstatePropertyOffer(models.Model):
             @return: returns a id of new record
         """
         for values in vals_list:
-            if values.get('deadline',None):
-                import pdb;pdb.set_trace()
+            if values.get('deadline',None):                
                 create_date = fields.Date.today()
                 days = fields.Date.to_date(values.get('deadline')) - create_date
                 if days.days > 30:                    
@@ -153,7 +152,7 @@ class EstatePropertyOffer(models.Model):
     def _check_price(self):
         user_currency = self.env.user.company_id.currency_id
         company_id = self.env.user.company_id
-        minimal_price=self.env['ir.config_parameter'].search([('key','=','minimum_property_offer_value')])
+        minimal_price=self.env['ir.config_parameter'].sudo().search([('key','=','minimum_property_offer_value')])
         if not minimal_price:
             return
         for record in self:            
