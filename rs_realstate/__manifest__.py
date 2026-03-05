@@ -25,7 +25,7 @@ Long description of module's purpose
         'security/security.xml',
         'security/ir.model.access.csv',
 
-        #'reports/estate_property_report.xml',
+        'reports/estate_property_report.xml',
 
         'views/estate_property_offer_views.xml',
         'views/estate_property_views.xml',

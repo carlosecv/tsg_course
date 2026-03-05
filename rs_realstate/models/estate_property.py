@@ -138,20 +138,35 @@ class EstateProperty(models.Model):
         for record in self:
             record.offer_count = len(record.offer_ids)
     
-    def action_open_estate_property_offers(self):        
-        return {
-            'name': _('Property Offers'),
-            'type': 'ir.actions.act_window',
-            'view_type': 'list',
-            'view_mode': 'list,form',
-            'res_model': 'estate.property.offer',
-            'domain': [('id', 'in', self.ids)],
-            'context': {
-                        'search_default_property_id': self.id,
-                        'default_property_id':self.id,
-                        'default_price': 500000,
-                        'default_currency_id': self.currency_id.id,
-            },
+    def action_open_estate_property_offers(self):   
+        import pdb;pdb.set_trace()
+        context = self.env.context
+
+        if context.get('my_flag'):
+            return {
+                'name': _('Property Offers'),
+                'type': 'ir.actions.act_window',
+                'view_type': 'list',
+                'view_mode': 'list,form',
+                'res_model': 'estate.property.offer',
+                'domain': [('id', 'in', self.ids)],
+                'context': {
+                            'search_default_property_id': self.id,
+                            'default_property_id':self.id,
+                            'default_price': 500000,
+                            'default_currency_id': self.currency_id.id,
+                },
+            }
+        else:
+            return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'title': 'This is a MEssage Test',
+                'message': 'My Flag is False se ejecutó correctamente.',
+                'type': 'success',
+                'sticky': False,
+            }
         }
         
     

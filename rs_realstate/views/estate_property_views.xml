@@ -42,7 +42,9 @@
                     <field name="state" widget="statusbar" statusbar_visible="draft,receive,accepted,sold" options="{'clickable': '1'}" />
                     <button name="%(action_estate_property_offer)d" type="action" string="Offers"                    
                             context="{'search_default_property_id': id}" />                            
-                    <button name="action_open_estate_property_offers" type="object" string="Open Offers" />
+                    <button name="action_open_estate_property_offers" type="object" string="Open Offers" 
+                        context="{'my_flag': False }"
+                    />
                 </header>
                 
                 <sheet>
@@ -76,7 +78,22 @@
 
                     <group colspan="4" >
                         <group>
-                            <field name="partner_id" />
+                            <field name="partner_id" 
+                                domain="[('is_company','=',True)]"
+                                context="{'default_is_company':True,                                    
+                                }"
+                                options="{
+                                           'no_create': True,
+                                           'no_open': True
+                                }"                                                                                                
+                                groups="rs_realstate.rs_realstate_salesman"
+                            />
+                            <field name="partner_id" 
+                                domain="[('is_company','=',True)]"
+                                context="{'default_is_company':True,                                    
+                                }"                                
+                                groups="rs_realstate.rs_realstate_admin"
+                            />
                             <field name="property_type_id"/>
                             <field name="postcode"/>
                             <field name="start_date"/>
