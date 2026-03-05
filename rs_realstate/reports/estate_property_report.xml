@@ -9,6 +9,23 @@
           <main class="page">
             <h2>Property: <span t-field="o.name"/></h2>
             <hr/>
+            <h3>Property Details</h3>
+            <div class="row">
+              <div class="col-6">
+                <p><strong>Type:</strong> <span t-field="o.property_type_id"/></p>
+                <p><strong>Address:</strong> <span t-field="o.partner_id"/></p>
+                <p><strong>Zip Code:</strong> <span t-field="o.postcode"/></p>
+                <p><strong>Salesperson:</strong> <span t-field="o.user_id"/></p>
+              </div>
+              <div class="col-6">
+                <p><strong>Expected Price:</strong> <span t-field="o.expected_price"/></p>
+                <p><strong>Selling Price:</strong> <span t-field="o.selling_price"/></p>
+                <p><strong>Status:</strong> <span t-field="o.state"/></p>
+                <p><strong>Start Date:</strong> <span t-field="o.start_date"/></p>
+              </div>
+            </div>
+
+
           </main>
         </t>
       </t>
