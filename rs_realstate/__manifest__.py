@@ -33,6 +33,7 @@ Long description of module's purpose
         'wizards/offer_asistant_wizard.xml',
         'views/rs_realstate_menu.xml',
         'data/ir_sequence.xml',
+        'data/ir_config_parameter.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

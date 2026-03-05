@@ -153,10 +153,13 @@ class EstatePropertyOffer(models.Model):
     def _check_price(self):
         user_currency = self.env.user.company_id.currency_id
         company_id = self.env.user.company_id
+        minimal_price=self.env['ir.config_parameter'].search([('key','=','minimum_property_offer_value')])
+        if not minimal_price:
+            return
         for record in self:            
-            converted_price = record.currency_id._convert(record.price, user_currency, company_id, record.create_date.date(), round=2)
-            if converted_price < 200000:
-                raise ValidationError("The price must be greater than 200000 USD")
+            converted_price = record.currency_id._convert(record.price, user_currency, company_id, record.create_date.date(), round=2)           
+            if converted_price < float(minimal_price.value):
+                raise ValidationError(f"The price must be greater than {minimal_price.value} {user_currency.name}")
 
     def message_user(self):
         return {
