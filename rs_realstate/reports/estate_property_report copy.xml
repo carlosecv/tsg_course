@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-      <template id="report_estate_property_document">
+   <template id="report_estate_property_document">
     <!-- ESTE wrapper asegura el <main> -->
     <t t-call="web.html_container">
       <t t-foreach="docs" t-as="o">
         <t t-call="web.external_layout">
           <main class="page">
 
-            <h2>Property: <span t-field="o.name"/></h2>
+            <div class="row">
+                <div class="col-5 align-left">
+                  <h2>Property: <span t-field="o.name"/></h2>
+                </div>
+                <div class="col-3 align-left">
+                    <img t-attf-src="/report/barcode/Code128/{{ o.name }}?width=200&amp;height=60"/>
+                </div>
+                <div class="col-3 align-right">
+                  <img t-attf-src="/report/barcode/QR/{{ o.name }}?width=200&amp;height=200"
+      style="width:100px;height:100px;"/>
+                </div>
+
+            </div>
             <hr/>
 
             <h3>Property Details</h3>
@@ -90,7 +102,7 @@
         <field name="binding_model_id" ref="model_estate_property"/>
         <field name="binding_type">report</field>
     </record>
-
+ 
     
 
 </odoo>

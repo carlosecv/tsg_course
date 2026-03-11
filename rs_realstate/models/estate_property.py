@@ -1,9 +1,12 @@
 from odoo import models,fields,api,_
+from odoo.exceptions import UserError
 
 class EstateProperty(models.Model):
     _name = 'estate.property'
-    _description = 'ModelName'
-
+    _description = 'Property'
+    
+    _inherit = ['mail.thread','mail.activity.mixin']
+    
     _rec_name = 'name'
     _order = 'name ASC'
 
@@ -57,6 +60,7 @@ class EstateProperty(models.Model):
 
     bedrooms = fields.Integer(string='Bedrooms')    
     living_area = fields.Integer(string='Living Area [m2]')    
+    
     garage = fields.Boolean(string='Garage')    
     garden = fields.Boolean(string='Garden')    
 
@@ -133,6 +137,19 @@ class EstateProperty(models.Model):
     offer_count = fields.Integer(string='Offers',
         compute='_compute_offer_count' )
     
+    garden_area = fields.Integer(string='Garden Area [m2]')    
+
+    total_area = fields.Integer(
+            string='Total Area [m²]',
+            compute='_compute_total_area',
+            store=True
+        ) 
+
+    @api.depends('living_area', 'garden_area')
+    def _compute_total_area(self):
+        for record in self:
+            record.total_area = record.living_area + record.garden_area
+
     @api.depends('offer_ids')
     def _compute_offer_count(self):
         for record in self:
@@ -169,4 +186,20 @@ class EstateProperty(models.Model):
         }
         
     
+    def action_sold(self):
+        for record in self:            
+            import wdb;wdb.set_trace(server='127.0.0.1', port=19840)
+            if record.state == 'sold':
+                raise UserError(_("This property is already sold."))
+
+            offer_states = record.offer_ids.mapped('state')
+
+            if 'accepted' not in offer_states:
+                raise UserError(
+                    _("You cannot sell a property without an accepted offer.")
+                )
+
+            record.state = 'sold'
+
+
     

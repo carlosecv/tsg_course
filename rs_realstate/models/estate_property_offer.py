@@ -6,6 +6,7 @@ class EstatePropertyOffer(models.Model):
     _name = 'estate.property.offer'
     _description = 'Property Offer'
 
+    _inherit = ['mail.thread','mail.activity.mixin']
     _rec_name = 'partner_id'
     _order = 'partner_id ASC'
 
@@ -171,6 +172,8 @@ class EstatePropertyOffer(models.Model):
                 'sticky': False,
             }
         }
+
+    
 
 #     _sql_constraints = [
 #         ('check_base_price_min', 'CHECK ( price >= 200000.0)',
