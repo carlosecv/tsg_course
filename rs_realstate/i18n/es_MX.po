@@ -1,0 +1,816 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* rs_realstate
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-11 22:11+0000\n"
+"PO-Revision-Date: 2026-03-11 16:22-0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.8\n"
+
+#. module: rs_realstate
+#: model:ir.actions.report,print_report_name:rs_realstate.action_report_estate_property
+msgid "'Property - %s' % (object.name)"
+msgstr "'Propiedad - %s' % (object.name)"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_form
+msgid ""
+"<span class=\"o_stat_text\">\n"
+"                                     Offers\n"
+"                                       </span>"
+msgstr ""
+"<span class=\"o_stat_text\">\n"
+"                                     Ofertas\n"
+"                                       </span>"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_kanban
+msgid "<span class=\"text-muted\">Expected:</span>"
+msgstr "<span class=\"text-muted\">Previsto:</span>"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_kanban
+msgid "<span class=\"text-muted\">Salesperson:</span>"
+msgstr "<span class=\"text-muted\">Ejecutivo de Ventas:</span>"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.report_estate_property_document
+msgid "<strong>Address:</strong>"
+msgstr "<strong>Dirección:</strong>"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.report_estate_property_document
+msgid "<strong>Expected Price:</strong>"
+msgstr "<strong>Precio esperado:</strong>"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.report_estate_property_document
+msgid "<strong>Salesperson:</strong>"
+msgstr "<strong>Ejecutivo de Ventas:</strong>"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.report_estate_property_document
+#, fuzzy
+msgid "<strong>Selling Price:</strong>"
+msgstr "<strong>Precio de venta:</strong>"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.report_estate_property_document
+#, fuzzy
+msgid "<strong>Start Date:</strong>"
+msgstr "<strong>Fecha de inicio:</strong>"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.report_estate_property_document
+#, fuzzy
+msgid "<strong>Status:</strong>"
+msgstr "<strong>Estado:</strong>"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.report_estate_property_document
+#, fuzzy
+msgid "<strong>Type:</strong>"
+msgstr "<strong>Tipo:</strong>"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.report_estate_property_document
+#, fuzzy
+msgid "<strong>Zip Code:</strong>"
+msgstr "<strong>Código postal:</strong>"
+
+#. module: rs_realstate
+#: model:ir.model.fields.selection,name:rs_realstate.selection__estate_property_offer__state__accepted
+#, fuzzy
+msgid "Acepted"
+msgstr "Aceptado"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__message_needaction
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__message_needaction
+msgid "Action Needed"
+msgstr "Acción Requerida"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__activity_ids
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__activity_exception_decoration
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de excepción de actividad"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__activity_state
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__activity_type_icon
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Ícono de Tipo de Actividad"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__name
+#, fuzzy
+msgid "Anounce Title"
+msgstr "Título del anuncio"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_form
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_search
+msgid "Archived"
+msgstr "Archivados"
+
+#. module: rs_realstate
+#: model:ir.ui.menu,name:rs_realstate.offer_asistant_menu
+#, fuzzy
+msgid "Asistant"
+msgstr "Asistente"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__message_attachment_count
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__message_attachment_count
+msgid "Attachment Count"
+msgstr "Cantidad de adjuntos"
+
+#. module: rs_realstate
+#. odoo-python
+#: code:addons/rs_realstate/models/estate_property_type.py:0
+#: model:ir.model.constraint,message:rs_realstate.constraint_estate_property_type_estate_property_type_name_uniq
+#, fuzzy
+msgid "Attribute Name must be unique!"
+msgstr "¡El nombre del atributo debe ser único!"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_type__active
+msgid "Available"
+msgstr "Disponible"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__bedrooms
+msgid "Bedrooms"
+msgstr "Recamaras"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__brochure
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_form
+#, fuzzy
+msgid "Brochure"
+msgstr "Folleto"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__brochure2
+#, fuzzy
+msgid "Brochure2"
+msgstr "Folleto 2"
+
+#. module: rs_realstate
+#: model:ir.model.fields.selection,name:rs_realstate.selection__estate_property_offer__state__cancel
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__categ_ids
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_category__name
+msgid "Category"
+msgstr "Categoría"
+
+#. module: rs_realstate
+#: model_terms:ir.actions.act_window,help:rs_realstate.action_estate_property
+#: model_terms:ir.actions.act_window,help:rs_realstate.action_estate_property_offer
+#, fuzzy
+msgid "Click to add new Properties at Offer"
+msgstr "Haga clic para agregar nuevas propiedades a la oferta."
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.offer_asistant_wizard_view_form
+msgid "Create"
+msgstr "Crear"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_search
+msgid "Create Date"
+msgstr "Fecha de Creación"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.offer_asistant_wizard_view_form
+#, fuzzy
+msgid "Create Property + Offer"
+msgstr "Crear propiedad + Oferta"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_offer_asistant_wizard__offer_id
+#, fuzzy
+msgid "Created Offer"
+msgstr "Oferta creada"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_offer_asistant_wizard__property_id
+#, fuzzy
+msgid "Created Property"
+msgstr "Propiedad creada"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__create_uid
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_category__create_uid
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__create_uid
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_type__create_uid
+#: model:ir.model.fields,field_description:rs_realstate.field_offer_asistant_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__create_date
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_category__create_date
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__create_date
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_type__create_date
+#: model:ir.model.fields,field_description:rs_realstate.field_offer_asistant_wizard__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__currency_id
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__currency_id
+#: model:ir.model.fields,field_description:rs_realstate.field_offer_asistant_wizard__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__partner_id
+#: model:ir.model.fields,field_description:rs_realstate.field_offer_asistant_wizard__customer_id
+#: model_terms:ir.ui.view,arch_db:rs_realstate.report_estate_property_document
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__deadline
+#: model_terms:ir.ui.view,arch_db:rs_realstate.report_estate_property_document
+msgid "Deadline"
+msgstr "Fecha límite"
+
+#. module: rs_realstate
+#: model_terms:ir.actions.act_window,help:rs_realstate.action_estate_property_type
+#, fuzzy
+msgid "Define a new property type (e.g. House, Apartment)"
+msgstr "Defina un nuevo tipo de propiedad (por ejemplo, casa, departamento)."
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_form
+msgid "Description"
+msgstr "Descripción"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__display_name
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_category__display_name
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__display_name
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_type__display_name
+#: model:ir.model.fields,field_description:rs_realstate.field_offer_asistant_wizard__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__elapsed_days
+#: model_terms:ir.ui.view,arch_db:rs_realstate.report_estate_property_document
+#, fuzzy
+msgid "Elapsed Days"
+msgstr "Días transcurridos"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__expected_price
+#, fuzzy
+msgid "Expected Price"
+msgstr "Precio esperado"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__signature
+#, fuzzy
+msgid "Firma"
+msgstr "Firma"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__message_follower_ids
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__message_partner_ids
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: rs_realstate
+#: model:ir.model.fields,help:rs_realstate.field_estate_property__activity_type_icon
+#: model:ir.model.fields,help:rs_realstate.field_estate_property_offer__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono de Font Awesome ej. fa-tasks"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__garage
+msgid "Garage"
+msgstr "Cochera"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__garden
+#, fuzzy
+msgid "Garden"
+msgstr "Jardín"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__garden_area
+#, fuzzy
+msgid "Garden Area [m2]"
+msgstr "Área de jardín [m2]"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__has_message
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__has_message
+msgid "Has Message"
+msgstr "Tiene mensaje"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__id
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_category__id
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__id
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_type__id
+#: model:ir.model.fields,field_description:rs_realstate.field_offer_asistant_wizard__id
+msgid "ID"
+msgstr "ID"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__activity_exception_icon
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: rs_realstate
+#: model:ir.model.fields,help:rs_realstate.field_estate_property__activity_exception_icon
+#: model:ir.model.fields,help:rs_realstate.field_estate_property_offer__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Ícono para indicar una actividad de excepción."
+
+#. module: rs_realstate
+#: model:ir.model.fields,help:rs_realstate.field_estate_property__message_needaction
+#: model:ir.model.fields,help:rs_realstate.field_estate_property_offer__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado hay nuevos mensajes que requieren su atención."
+
+#. module: rs_realstate
+#: model:ir.model.fields,help:rs_realstate.field_estate_property__message_has_error
+#: model:ir.model.fields,help:rs_realstate.field_estate_property_offer__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__image_128
+msgid "Image 128"
+msgstr "Imagen 128"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__image_256
+msgid "Image 256"
+msgstr "Imagen 256"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__image_1920
+#, fuzzy
+msgid "Imagen"
+msgstr "Imagen"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__message_is_follower
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__message_is_follower
+msgid "Is Follower"
+msgstr "Es Seguidor"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__write_uid
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_category__write_uid
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__write_uid
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_type__write_uid
+#: model:ir.model.fields,field_description:rs_realstate.field_offer_asistant_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__write_date
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_category__write_date
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__write_date
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_type__write_date
+#: model:ir.model.fields,field_description:rs_realstate.field_offer_asistant_wizard__write_date
+msgid "Last Updated on"
+msgstr "Última modificación en"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__living_area
+#, fuzzy
+msgid "Living Area [m2]"
+msgstr "Superficie habitable [m2]"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__message_has_error
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_offer_form
+#, fuzzy
+msgid "Message to User"
+msgstr "Mensaje para el usuario"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__message_ids
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__my_activity_date_deadline
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Fecha límite de Mi Actividad"
+
+#. module: rs_realstate
+#. odoo-python
+#: code:addons/rs_realstate/models/estate_property.py:0
+#: code:addons/rs_realstate/models/estate_property_category.py:0
+#: code:addons/rs_realstate/models/estate_property_type.py:0
+#: model:ir.model.fields.selection,name:rs_realstate.selection__estate_property__state__draft
+#: model:ir.model.fields.selection,name:rs_realstate.selection__estate_property_offer__state__draft
+msgid "New"
+msgstr "Nuevo"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__activity_date_deadline
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha de vencimiento de siguiente actividad"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__activity_summary
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__activity_type_id
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo de actividad Siguiente"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.report_estate_property_document
+#, fuzzy
+msgid "No offers found for this property."
+msgstr "No se han encontrado ofertas para esta propiedad."
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__message_needaction_counter
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__message_has_error_counter
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: rs_realstate
+#: model:ir.model.fields,help:rs_realstate.field_estate_property__message_needaction_counter
+#: model:ir.model.fields,help:rs_realstate.field_estate_property_offer__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren acción"
+
+#. module: rs_realstate
+#: model:ir.model.fields,help:rs_realstate.field_estate_property__message_has_error_counter
+#: model:ir.model.fields,help:rs_realstate.field_estate_property_offer__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: rs_realstate
+#: model:ir.actions.act_window,name:rs_realstate.action_estate_property_offer
+#: model_terms:ir.ui.view,arch_db:rs_realstate.offer_asistant_wizard_view_form
+msgid "Offer"
+msgstr "Oferta"
+
+#. module: rs_realstate
+#: model:ir.model.fields.selection,name:rs_realstate.selection__estate_property__state__accepted
+#, fuzzy
+msgid "Offer Accept"
+msgstr "Aceptar oferta"
+
+#. module: rs_realstate
+#: model:ir.model,name:rs_realstate.model_offer_asistant_wizard
+#, fuzzy
+msgid "Offer Assistant (Create Property + Offer)"
+msgstr "Asistente de ofertas (Crear propiedad + Oferta)"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_offer_asistant_wizard__price
+#: model_terms:ir.ui.view,arch_db:rs_realstate.report_estate_property_document
+msgid "Offer Price"
+msgstr "Precio de oferta"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__offer_count
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__offer_ids
+#: model:ir.ui.menu,name:rs_realstate.estate_property_offer_menu
+#: model_terms:ir.ui.view,arch_db:rs_realstate.report_estate_property_document
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_form
+msgid "Offers"
+msgstr "Ofertas"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__price
+#, fuzzy
+msgid "Offert Price"
+msgstr "Precio de oferta"
+
+#. module: rs_realstate
+#: model:ir.model.fields.selection,name:rs_realstate.selection__estate_property__state__receive
+#, fuzzy
+msgid "Offert Received"
+msgstr "Oferta recibida"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_form
+#, fuzzy
+msgid "Open Offers"
+msgstr "Ofertas abiertas"
+
+#. module: rs_realstate
+#. odoo-python
+#: code:addons/rs_realstate/wizards/offer_asistant_wizard.py:0
+#, fuzzy
+msgid "Please select a Customer for the Offer."
+msgstr "Seleccione un cliente para la oferta."
+
+#. module: rs_realstate
+#. odoo-python
+#: code:addons/rs_realstate/wizards/offer_asistant_wizard.py:0
+#, fuzzy
+msgid "Please select a Property Address."
+msgstr "Seleccione una dirección de propiedad."
+
+#. module: rs_realstate
+#: model:ir.actions.act_window,name:rs_realstate.action_estate_property
+#: model:ir.ui.menu,name:rs_realstate.estate_property_menu
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_form
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_list
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_offer_form
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_offer_list
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_offer_search
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_search
+msgid "Properties"
+msgstr "Propiedades"
+
+#. module: rs_realstate
+#. odoo-python
+#: code:addons/rs_realstate/wizards/offer_asistant_wizard.py:0
+#: model:ir.model,name:rs_realstate.model_estate_property
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__property_id
+#: model_terms:ir.ui.view,arch_db:rs_realstate.offer_asistant_wizard_view_form
+msgid "Property"
+msgstr "Propiedad"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__partner_id
+#: model:ir.model.fields,field_description:rs_realstate.field_offer_asistant_wizard__address_id
+msgid "Property Address"
+msgstr "Dirección de Propiedad"
+
+#. module: rs_realstate
+#: model:res.groups,name:rs_realstate.rs_realstate_admin
+#, fuzzy
+msgid "Property Administrator"
+msgstr "Administrador de propiedades"
+
+#. module: rs_realstate
+#: model:ir.model,name:rs_realstate.model_estate_property_category
+msgid "Property Category"
+msgstr "Categoría del inmueble"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.report_estate_property_document
+msgid "Property Details"
+msgstr "Detalles de la propiedad"
+
+#. module: rs_realstate
+#: model:ir.model,name:rs_realstate.model_estate_property_offer
+#, fuzzy
+msgid "Property Offer"
+msgstr "Oferta inmobiliaria"
+
+#. module: rs_realstate
+#. odoo-python
+#: code:addons/rs_realstate/models/estate_property.py:0
+#, fuzzy
+msgid "Property Offers"
+msgstr "Ofertas inmobiliarias"
+
+#. module: rs_realstate
+#: model:ir.actions.report,name:rs_realstate.action_report_estate_property
+#, fuzzy
+msgid "Property Report"
+msgstr "Informe sobre la propiedad"
+
+#. module: rs_realstate
+#: model:ir.model,name:rs_realstate.model_estate_property_type
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__property_type_id
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_type__name
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_type_form
+msgid "Property Type"
+msgstr "Tipo de Propiedad"
+
+#. module: rs_realstate
+#: model:ir.actions.act_window,name:rs_realstate.action_estate_property_type
+#: model:ir.ui.menu,name:rs_realstate.estate_property_type_menu
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_type_list
+msgid "Property Types"
+msgstr "Tipos de propiedad"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.report_estate_property_document
+msgid "Property:"
+msgstr "Propiedad:"
+
+#. module: rs_realstate
+#: model:ir.ui.menu,name:rs_realstate.estate_properties_menu_root
+#, fuzzy
+msgid "Real State"
+msgstr "Bienes raíces"
+
+#. module: rs_realstate
+#: model:ir.model.fields.selection,name:rs_realstate.selection__estate_property_offer__state__reject
+msgid "Rejected"
+msgstr "Rechazado"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__activity_user_id
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: rs_realstate
+#: model:res.groups,name:rs_realstate.rs_realstate_salesman
+#, fuzzy
+msgid "Salesman Properties"
+msgstr "Propiedades del vendedor"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__user_id
+#: model:ir.model.fields,field_description:rs_realstate.field_offer_asistant_wizard__user_id
+msgid "Salesperson"
+msgstr "Vendedor"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_type_search
+msgid "Search Property Types"
+msgstr "Buscar tipos de inmueble"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__selling_price
+#: model:ir.model.fields,field_description:rs_realstate.field_offer_asistant_wizard__selling_price
+msgid "Selling Price"
+msgstr "Precio de venta"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_form
+msgid "Signature"
+msgstr "Firma"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.offer_asistant_wizard_view_form
+msgid "Skip"
+msgstr "Saltar"
+
+#. module: rs_realstate
+#: model:ir.model.fields.selection,name:rs_realstate.selection__estate_property__state__sold
+msgid "Sold"
+msgstr "Vendido"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__start_date
+msgid "Start Date"
+msgstr "Fecha de Inicio"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__state
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__state
+msgid "State"
+msgstr "Estado"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.report_estate_property_document
+msgid "Status"
+msgstr "Estado"
+
+#. module: rs_realstate
+#: model:ir.model.fields,help:rs_realstate.field_estate_property__activity_state
+#: model:ir.model.fields,help:rs_realstate.field_estate_property_offer__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: la fecha límite ya pasó\n"
+"Hoy: la fecha límite es hoy\n"
+"Planificada: actividades futuras."
+
+#. module: rs_realstate
+#: model_terms:ir.actions.act_window,help:rs_realstate.action_estate_property
+#: model_terms:ir.actions.act_window,help:rs_realstate.action_estate_property_offer
+#, fuzzy
+msgid "This are the properties to sell."
+msgstr "Estas son las propiedades en venta."
+
+#. module: rs_realstate
+#. odoo-python
+#: code:addons/rs_realstate/models/estate_property.py:0
+#, fuzzy
+msgid "This property is already sold."
+msgstr "Esta propiedad ya está vendida."
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_form
+#, fuzzy
+msgid "This will show you offers for this property. Do you want to proceed?"
+msgstr "Esto le mostrará las ofertas para esta propiedad. ¿Desea continuar?"
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__total_area
+#, fuzzy
+msgid "Total Area [m²]"
+msgstr "Superficie total [m²]"
+
+#. module: rs_realstate
+#: model:ir.model.fields,help:rs_realstate.field_estate_property__activity_exception_decoration
+#: model:ir.model.fields,help:rs_realstate.field_estate_property_offer__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__validity_days
+#: model_terms:ir.ui.view,arch_db:rs_realstate.report_estate_property_document
+#, fuzzy
+msgid "Validity Days"
+msgstr "Días de validez"
+
+#. module: rs_realstate
+#. odoo-python
+#: code:addons/rs_realstate/models/estate_property.py:0
+#, fuzzy
+msgid "You cannot sell a property without an accepted offer."
+msgstr "No se puede vender una propiedad sin una oferta aceptada."
+
+#. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__postcode
+msgid "Zip Code"
+msgstr "Código postal"
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_type_form
+#, fuzzy
+msgid "e.g. Apartment"
+msgstr "Por ejemplo, apartamento."
+
+#. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_form
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_offer_form
+msgid "name"
+msgstr "nombre"
+
+#. module: rs_realstate
+#: model:ir.actions.act_window,name:rs_realstate.offer_asistant_wizard_action
+#, fuzzy
+msgid "offer.asistant.wizard.action"
+msgstr "ofrecer.asistente.asistente.acción"
