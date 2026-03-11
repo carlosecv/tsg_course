@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- ===================================================== -->
+        <!-- PROPERTIES -->
+        <!-- ===================================================== -->
+
+        <record id="estate_property_demo_1" model="estate.property">
+            <field name="name">Modern Loft Downtown</field>
+            <field name="start_date">2026-04-01</field>
+            <field name="expected_price">250000</field>
+            <field name="selling_price">240000</field>
+            <field name="bedrooms">2</field>
+            <field name="living_area">120</field>
+            <field name="garage">True</field>
+            <field name="garden">False</field>
+            <field name="garden_area">0</field>
+            <field name="active">True</field>
+            <field name="state">receive</field>
+            <field name="partner_id" ref="base.res_partner_1"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="property_type_id" ref="rs_realstate.estate_property_type_apartment"/>
+            <field name="categ_ids"
+           eval="[Command.set([
+                ref('rs_realstate.estate_property_category_luxury'),
+                ref('rs_realstate.estate_property_category_furnished')
+           ])]"/>
+        </record>
+
+        <record id="estate_property_demo_2" model="estate.property">
+            <field name="name">Family House with Garden</field>
+            <field name="start_date">2026-05-15</field>
+            <field name="expected_price">320000</field>
+            <field name="selling_price">315000</field>
+            <field name="bedrooms">4</field>
+            <field name="living_area">200</field>
+            <field name="garage">True</field>
+            <field name="garden">True</field>
+            <field name="garden_area">80</field>
+            <field name="active">True</field>
+            <field name="state">accepted</field>
+            <field name="partner_id" ref="base.res_partner_2"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="property_type_id" ref="rs_realstate.estate_property_type_land"/>
+            <field name="categ_ids"
+           eval="[Command.set([
+                ref('rs_realstate.estate_property_category_new'),
+                ref('rs_realstate.estate_property_category_furnished')
+           ])]"/>
+        </record>
+
+        <record id="estate_property_demo_3" model="estate.property">
+            <field name="name">Suburban Villa</field>
+            <field name="start_date">2026-06-10</field>
+            <field name="expected_price">410000</field>
+            <field name="selling_price">395000</field>
+            <field name="bedrooms">5</field>
+            <field name="living_area">280</field>
+            <field name="garage">True</field>
+            <field name="garden">True</field>
+            <field name="garden_area">120</field>
+            <field name="active">True</field>
+            <field name="state">draft</field>
+            <field name="partner_id" ref="base.res_partner_12"/>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="property_type_id" ref="rs_realstate.estate_property_type_villa"/>
+             <field name="categ_ids"
+           eval="[Command.set([
+                ref('rs_realstate.estate_property_category_new'),
+                ref('rs_realstate.estate_property_category_sea_view')
+           ])]"/>
+        </record>
+
+        <!-- ===================================================== -->
+        <!-- OFFERS -->
+        <!-- ===================================================== -->
+
+        <record id="estate_offer_demo_1" model="estate.property.offer">
+            <field name="property_id" ref="estate_property_demo_1"/>
+            <field name="partner_id" ref="base.res_partner_address_3"/>
+            <field name="price">240000</field>
+            <field name="validity_days">7</field>
+            <field name="state">accepted</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <record id="estate_offer_demo_2" model="estate.property.offer">
+            <field name="property_id" ref="estate_property_demo_1"/>
+            <field name="partner_id" ref="base.res_partner_address_4"/>
+            <field name="price">230000</field>
+            <field name="validity_days">5</field>
+            <field name="state">reject</field>
+            <field name="sequence">2</field>
+        </record>
+
+        <record id="estate_offer_demo_3" model="estate.property.offer">
+            <field name="property_id" ref="estate_property_demo_2"/>
+            <field name="partner_id" ref="base.res_partner_address_17"/>
+            <field name="price">315000</field>
+            <field name="validity_days">10</field>
+            <field name="state">accepted</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <record id="estate_offer_demo_4" model="estate.property.offer">
+            <field name="property_id" ref="estate_property_demo_3"/>
+            <field name="partner_id" ref="base.res_partner_address_18"/>
+            <field name="price">395000</field>
+            <field name="validity_days">12</field>
+            <field name="state">draft</field>
+            <field name="sequence">1</field>
+        </record>
+
+    </data>
+</odoo>

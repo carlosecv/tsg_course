@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- ===================================================== -->
+        <!-- PROPERTY CATEGORIES -->
+        <!-- ===================================================== -->
+
+        <record id="estate_property_category_luxury" model="estate.property.category">
+            <field name="name">Luxury</field>
+        </record>
+
+        <record id="estate_property_category_new" model="estate.property.category">
+            <field name="name">New Construction</field>
+        </record>
+
+        <record id="estate_property_category_investment" model="estate.property.category">
+            <field name="name">Investment</field>
+        </record>
+
+        <record id="estate_property_category_renovation" model="estate.property.category">
+            <field name="name">Needs Renovation</field>
+        </record>
+
+        <record id="estate_property_category_furnished" model="estate.property.category">
+            <field name="name">Furnished</field>
+        </record>
+
+        <record id="estate_property_category_sea_view" model="estate.property.category">
+            <field name="name">Sea View</field>
+        </record>
+
+    </data>
+</odoo>

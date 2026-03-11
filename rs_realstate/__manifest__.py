@@ -32,7 +32,9 @@ Long description of module's purpose
 
         'views/estate_property_offer_views.xml',
         'views/estate_property_views.xml',
-        'views/estate_property_type_views.xml',        
+        'views/estate_property_type_views.xml',
+        'views/estate_property_category_views.xml',
+
         'wizards/offer_asistant_wizard.xml',
         'views/rs_realstate_menu.xml',
         'data/ir_sequence.xml',
@@ -40,7 +42,9 @@ Long description of module's purpose
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+        'demo/estate_property_category_demo.xml',
+        'demo/estate_property_type_demo.xml',
+        'demo/estate_property_demo.xml',
     ],
 }
 

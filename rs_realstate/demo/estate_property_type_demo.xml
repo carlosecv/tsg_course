@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- ===================================================== -->
+        <!-- PROPERTY TYPES -->
+        <!-- ===================================================== -->
+
+        <record id="estate_property_type_house" model="estate.property.type">
+            <field name="name">House</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="estate_property_type_apartment" model="estate.property.type">
+            <field name="name">Apartment</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="estate_property_type_villa" model="estate.property.type">
+            <field name="name">Villa</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="estate_property_type_office" model="estate.property.type">
+            <field name="name">Office</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="estate_property_type_land" model="estate.property.type">
+            <field name="name">Land</field>
+            <field name="active">True</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,26 +1,42 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    
+
     <!-- Main menu for "model" -->
     <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
     <menuitem id="estate_properties_menu_root" name="Real State" sequence="10" >
-        <menuitem id="estate_property_menu" name="Properties" sequence="10" action="action_estate_property" />                
+        <menuitem id="estate_property_menu" name="Properties" sequence="10" action="action_estate_property" />
+        <menuitem id="rs_realstate_config_menu" name="Configuration" sequence="90"  />
     </menuitem>
-    
+
     <!-- Menú (ActionMenu) -->
     <!-- Lo colocamos dentro del menú raíz que ya creaste en el otro archivo -->
-    <menuitem 
-        id="estate_property_type_menu" 
-        name="Property Types" 
-        parent="estate_properties_menu_root" 
-        action="action_estate_property_type" 
+    <menuitem
+        id="estate_property_type_menu"
+        name="Property Types"
+        parent="rs_realstate_config_menu"
+        action="action_estate_property_type"
         sequence="20"/>
 
-    
+
     <menuitem id="estate_property_offer_menu" name="Offers" parent="estate_properties_menu_root"
         sequence="10" action="action_estate_property_offer" />
 
 
-    <menuitem id="offer_asistant_menu" name="Asistant" sequence="10" action="offer_asistant_wizard_action" parent="estate_properties_menu_root"/>                
-    
+    <menuitem id="offer_asistant_menu" name="Asistant"
+    sequence="10"
+    action="offer_asistant_wizard_action"
+    parent="estate_properties_menu_root"/>
+
+    <!-- ===================================================== -->
+    <!-- MENU -->
+    <!-- Ajusta parent="..." al menú padre real de tu módulo -->
+    <!-- ===================================================== -->
+    <menuitem
+        id="menu_estate_property_category"
+        name="Property Categories"
+        parent="rs_realstate.rs_realstate_config_menu"
+        action="action_estate_property_category"
+        sequence="40"
+    />
+
 </odoo>

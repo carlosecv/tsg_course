@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    
-        
+
+
     <!-- list view for "model" -->
     <record id="view_estate_property_list" model="ir.ui.view">
         <field name="name">view.estate.property.list</field>
-        <field name="model">estate.property</field>        
+        <field name="model">estate.property</field>
         <field name="mode">primary</field>
-        <field name="priority" eval="16" />    
+        <field name="priority" eval="16" />
         <field name="arch" type="xml">
             <list string="Properties" create="true" delete="true" edit="true">
                 <field name="active" invisible="1"/>
@@ -23,7 +23,7 @@
                 <field name="garden"/>
                 <field name="garden_area"/>
                 <field name="total_area" readonly="1"/>
-                <field name="categ_ids" widget="many2many_tags" />                
+                <field name="categ_ids" widget="many2many_tags" options="{'color_field': 'color'}" />
                 <field name="state" decoration-success="state == 'sold'" decoration-info="state == 'draft'" decoration-primary="state == 'accepted'"  widget="badge" optional="hide"/>
             </list>
         </field>
@@ -32,10 +32,10 @@
                     string="Print PDF"
                     type="action"
                     class="btn-primary"/>
-                                    <button name="action_sold" type="object" string="Mark Sold" 
+                                    <button name="action_sold" type="object" string="Mark Sold"
                     />
-                    
-                    <button name="action_sold" type="object" string="Mark Sold" 
+
+                    <button name="action_sold" type="object" string="Mark Sold"
                     />
                      -->
     <!-- Form view for "model" -->
@@ -43,34 +43,34 @@
         <field name="name">view.estate.property.form</field>
         <field name="model">estate.property</field>
         <field name="mode">primary</field>
-        <field name="priority" eval="16" />        
+        <field name="priority" eval="16" />
         <field name="arch" type="xml">
-            <form string="Properties" create="true" delete="true" edit="true">                
+            <form string="Properties" create="true" delete="true" edit="true">
                 <header>
                     <field name="state" widget="statusbar" statusbar_visible="draft,receive,accepted,sold" options="{'clickable': '1'}" />
-                    <button name="%(action_estate_property_offer)d" type="action" string="Offers"                    
-                            context="{'search_default_property_id': id}" />                            
-                    <button name="action_open_estate_property_offers" type="object" string="Open Offers" 
+                    <button name="%(action_estate_property_offer)d" type="action" string="Offers"
+                            context="{'search_default_property_id': id}" />
+                    <button name="action_open_estate_property_offers" type="object" string="Open Offers"
                         context="{'my_flag': False }"
                     />
 
-                    
+
                 </header>
-                
+
                 <sheet>
                      <div class="oe_button_box" name="button_box">
-                        <button name="%(action_estate_property_offer)d" 
+                        <button name="%(action_estate_property_offer)d"
                                 type="action"
                                 context="{'search_default_property_id': id}"
                                 confirm="This will show you offers for this property. Do you want to proceed?"
                                 invisible="offer_count==0"
                                 widget="statinfo"
-                                icon="fa-id-card">   
+                                icon="fa-id-card">
                                  <div class="o_field_widget o_stat_info">
                                     <span class="o_stat_text" >
                                      Offers
                                        </span>
-                                    <field name="offer_count"/>                                                             
+                                    <field name="offer_count"/>
                                 </div>
                         </button>
                      </div>
@@ -83,29 +83,29 @@
                             <field name="name" class="oe_inline"
                                 placeholder="name" readonly="1" force_save="1" />
                         </h1>
-                        <span class="d-block p-2 bg-primary text-white">                            
-                            <label for='categ_ids' />                            
-                            <field name="categ_ids" widget="many2many_tags" />
+                        <span class="d-block p-2 bg-primary text-white">
+                            <label for='categ_ids' />
+                            <field name="categ_ids" widget="many2many_tags" options="{'color_field': 'color'}" />
                         </span>
-                        
+
                     </div>
 
                     <group colspan="4" >
                         <group>
-                            <field name="partner_id" 
+                            <field name="partner_id"
                                 domain="[('is_company','=',True)]"
-                                context="{'default_is_company':True,                                    
+                                context="{'default_is_company':True,
                                 }"
                                 options="{
                                            'no_create': True,
                                            'no_open': True
-                                }"                                                                                                
+                                }"
                                 groups="rs_realstate.rs_realstate_salesman"
                             />
-                            <field name="partner_id" 
+                            <field name="partner_id"
                                 domain="[('is_company','=',True)]"
-                                context="{'default_is_company':True,                                    
-                                }"                                
+                                context="{'default_is_company':True,
+                                }"
                                 groups="rs_realstate.rs_realstate_admin"
                             />
                             <field name="property_type_id"/>
@@ -116,9 +116,9 @@
                             <field name="currency_id" />
                             <field name="expected_price"/>
                             <field name="selling_price"/>
-                        </group>                        
-                    </group>                    
-                    <notebook>                        
+                        </group>
+                    </group>
+                    <notebook>
                         <page string="Description" >
                             <group>
                             <field name="user_id" widget="many2one_avatar_user"/>
@@ -128,16 +128,16 @@
                             <field name="garden"/>
                             </group>
                         </page>
-                        
+
                         <page string="Offers" >
-                            <field name="offer_ids">                                                        
+                            <field name="offer_ids">
                                 <list string="Offers" create="true" delete="true" edit="true">
                                     <field name="sequence" widget="handle" />
                                     <field name="partner_id"/>
                                     <field name="currency_id"/>
                                     <field name="price"/>
-                                    <field name="state"/>                                    
-                                </list>                            
+                                    <field name="state"/>
+                                </list>
                             </field>
                         </page>
                         <page name="page_brochure" string="Brochure">
@@ -147,32 +147,32 @@
                             </group>
                         </page>
                         <page name="page_signature" string="Signature">
-                            <group>                        
+                            <group>
                                 <field name="signature" widget="signature"/>
                             </group>
                         </page>
-                                              
-                                                
+
+
                     </notebook>
-                                                           
+
                 </sheet>
-                <chatter/> 
+                <chatter/>
             </form>
         </field>
     </record>
-    
+
     <!-- Search view for "model" -->
     <record id="view_estate_property_search" model="ir.ui.view">
         <field name="name">view.estate.property.search</field>
         <field name="model">estate.property</field>
         <field name="type">search</field>
         <field name="mode">primary</field>
-        <field name="priority" eval="16" />        
+        <field name="priority" eval="16" />
         <field name="arch" type="xml">
             <search string="Properties">
-                <field name="name" />                                
-                <separator />                                    
-                <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>                                
+                <field name="name" />
+                <separator />
+                <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
                 <separator/>
                 <filter string="Create Date" name="filter_create_date" date="create_date"/>
                 <group>
@@ -182,7 +182,7 @@
         </field>
     </record>
 
- 
+
     <record id="view_estate_property_kanban" model="ir.ui.view">
         <field name="name">estate.property.kanban</field>
         <field name="model">estate.property</field>
@@ -244,8 +244,8 @@
         </field>
     </record>
 
- 
- <!--    
+
+ <!--
             <record id="view_estate_property_kanban" model="ir.ui.view">
                 <field name="name">estate.property.kanban</field>
                 <field name="model">estate.property</field>
@@ -338,8 +338,8 @@
                 </field>
             </record>
  -->
-    
-<!--  
+
+<!--
     <record id="view_estate_property_map" model="ir.ui.view">
         <field name="name">estate.property.map</field>
         <field name="model">estate.property</field>
@@ -347,8 +347,8 @@
             <map string="Properties Map" res_partner="partner_id" default_order="name"/>
         </field>
     </record> -->
- 
-<!-- 
+
+<!--
     <record id="view_estate_property_pivot" model="ir.ui.view">
         <field name="name">estate.property.pivot</field>
         <field name="model">estate.property</field>
@@ -366,7 +366,7 @@
     </record>
 
  -->
- <!-- 
+ <!--
     <record id="view_estate_property_gantt" model="ir.ui.view">
         <field name="name">estate.property.gantt</field>
         <field name="model">estate.property</field>
@@ -378,13 +378,13 @@
             </gantt>
         </field>
     </record>
-  -->   
+  -->
     <!-- Main window action for "model"  map,pivot,gantt -->
     <record id="action_estate_property" model="ir.actions.act_window">
         <field name="type">ir.actions.act_window</field>
         <field name="name">Properties</field>
         <field name="res_model">estate.property</field>
-        <field name="view_mode">list,form,kanban</field>        
+        <field name="view_mode">list,form,kanban</field>
         <field name="target">current</field>
         <field name="search_view_id" ref="view_estate_property_search" />
         <field name="help" type="html">
@@ -396,6 +396,6 @@
         </field>
     </record>
 
-    
+
 
 </odoo>
