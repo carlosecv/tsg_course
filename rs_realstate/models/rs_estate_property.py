@@ -4,16 +4,16 @@ from odoo.exceptions import UserError, ValidationError
 class RsProperty(models.Model):
     _name = 'rs.estate.property'
     _inherit = 'estate.property'
-        
+
 
     offer_ids = fields.One2many(
         string='Offers',
         comodel_name='rs.estate.property.offer',
         inverse_name='property_id',
     )
-    
 
-    def action_open_estate_property_offers(self):   
+
+    def action_open_estate_property_offers(self):
         context = self.env.context
         if context.get('my_flag'):
             return {
@@ -35,10 +35,9 @@ class RsProperty(models.Model):
             'type': 'ir.actions.client',
             'tag': 'display_notification',
             'params': {
-                'title': 'This is a MEssage Test',
+                'title': 'This is a Message Test',
                 'message': 'My Flag is False se ejecutó correctamente.',
                 'type': 'success',
                 'sticky': False,
             }
         }
-       

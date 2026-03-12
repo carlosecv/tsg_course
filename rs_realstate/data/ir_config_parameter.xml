@@ -4,10 +4,9 @@
 
         <record id="minimum_property_offer_value" model="ir.config_parameter">
             <field name="key">minimum_property_offer_value</field>
-            <field name="value">200000</field>            
+            <field name="value">2</field>
         </record>
-        
+
 
     </data>
 </odoo>
-
