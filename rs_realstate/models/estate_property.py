@@ -203,3 +203,18 @@ class EstateProperty(models.Model):
 
 
     
+    
+    def write(self, values):
+        """
+            Update all record(s) in recordset, with new value comes as {values}
+            return True on success, False otherwise
+    
+            @param values: dict of new values to be set
+    
+            @return: True on success, False otherwise
+        """
+
+        result = super().write(values)        
+        
+        return result
+    

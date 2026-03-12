@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- model.name inherit form view -->
+    <record id="res_partner_is_property_form_inh" model="ir.ui.view">
+        <field name="name">rers.partner.is.property.form.inh</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="is_property"/>                
+            </xpath>
+            
+        </field>
+    </record>
+
+
+    <record id="res_partner_is_property_search_inh" model="ir.ui.view">
+        <field name="name">rers.partner.is.property.search.inh</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="after">                
+                <separator />
+                <filter string="Property" name="is_property" domain="[('is_property', '=', True)]"/>                                                    
+            </xpath>
+            
+        </field>
+    </record>
+
+    
+
+</odoo>

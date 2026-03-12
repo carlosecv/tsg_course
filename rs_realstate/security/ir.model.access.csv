@@ -9,3 +9,7 @@ access_estate_property_category_rs_realstate_salesman,access.estate.property.cat
 access_estate_property_category_rs_realstate_admin,access.estate.property.category.rs.realstate.admin,model_estate_property_category,rs_realstate_admin,1,1,1,1
 access_offer_asistant_wizard_salesman,access.offer.asistant.wizard.salesman,model_offer_asistant_wizard,rs_realstate_salesman,1,1,1,0
 access_offer_asistant_wizard_admin,access.offer.asistant.wizard.admin,model_offer_asistant_wizard,rs_realstate_admin,1,1,1,0
+access_rs_estate_property_rs_realstate_salesman,access.rs.estate.property.rs.realstate.salesman,model_rs_estate_property,rs_realstate_salesman,1,1,1,0
+access_rs_estate_property_rs_realstate_admin,access.rs.estate.property.rs.realstate.admin,model_rs_estate_property,rs_realstate_admin,1,1,1,1
+access_rs_estate_property_offer_rs_realstate_salesman,rs_realstate.access.rs.estate.property.offer.rs.realstate.salesman,model_rs_estate_property_offer,rs_realstate_salesman,1,1,1,0
+access_rs_estate_property_offer_rs_realstate_admin,rs_realstate.access.rs.estate.property.offer.rs.realstate.admin,model_rs_estate_property_offer,rs_realstate_admin,1,1,1,1
