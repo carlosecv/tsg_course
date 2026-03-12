@@ -4,9 +4,9 @@ from odoo.exceptions import UserError
 class EstateProperty(models.Model):
     _name = 'estate.property'
     _description = 'Property'
-    
+
     _inherit = ['mail.thread','mail.activity.mixin']
-    
+
     _rec_name = 'name'
     _order = 'name ASC'
 
@@ -14,15 +14,15 @@ class EstateProperty(models.Model):
     def _default_currency_id(self):
         return self.env.user.company_id.currency_id
 
-    
+
     @api.model_create_multi
     def create(self, vals_list):
         """
             Create a new record for a model ModelName
             @param values: provides a data for new record
-    
+
             @return: returns a id of new record
-        """                
+        """
         for vals in vals_list:
             if vals.get('name', _("New")) == _("New"):
                 vals['name'] = self.env['ir.sequence'].with_company(vals.get('company_id')).next_by_code(
@@ -34,7 +34,7 @@ class EstateProperty(models.Model):
 
         res = super().create(vals_list)
         return res
-    
+
 
     name = fields.Char(
         string='Anounce Title',
@@ -43,62 +43,62 @@ class EstateProperty(models.Model):
         readonly=False,
         copy=False
     )
-    
+
     property_type_id = fields.Many2one(
         string='Property Type',
         comodel_name='estate.property.type',
         ondelete='restrict',
     )
-    
+
     postcode = fields.Char(string='Zip Code',related="partner_id.zip",readonly=False)
-    
+
     currency_id = fields.Many2one('res.currency',required=True,default=lambda self: self._default_currency_id())
 
     expected_price = fields.Monetary(string='Expected Price',currency_field="currency_id")
-    
+
     selling_price = fields.Monetary(string='Selling Price',currency_field="currency_id")
 
-    bedrooms = fields.Integer(string='Bedrooms')    
-    living_area = fields.Integer(string='Living Area [m2]')    
-    
-    garage = fields.Boolean(string='Garage')    
-    garden = fields.Boolean(string='Garden')    
+    bedrooms = fields.Integer(string='Bedrooms')
+    living_area = fields.Integer(string='Living Area [m2]')
+
+    garage = fields.Boolean(string='Garage')
+    garden = fields.Boolean(string='Garden')
 
     offer_ids = fields.One2many(
         string='Offers',
         comodel_name='estate.property.offer',
         inverse_name='property_id',
     )
-    
+
     start_date = fields.Date(string='Start Date')
-    
+
     state = fields.Selection(
         string='State',
-        selection=[('draft', 'New'), 
-                    ('receive', 'Offert Received'),  
-                    ('accepted', 'Offer Accept'),  
+        selection=[('draft', 'New'),
+                    ('receive', 'Offert Received'),
+                    ('accepted', 'Offer Accept'),
                     ('sold', 'Sold')],
         default='draft',
         readonly=False,
     )
-    
+
     categ_ids = fields.Many2many(
         string='Category',
         comodel_name='estate.property.category'
     )
-    
+
     active = fields.Boolean(string='Active',default=True)
-    
+
     user_id = fields.Many2one(
         comodel_name='res.users',
-        string="Salesperson",        
+        string="Salesperson",
         readonly=False, index=True,
         tracking=2,)
-    
+
     brochure = fields.Binary(string='Brochure')
 
     brochure2 = fields.Binary(string='Brochure2',attachment=False)
-    
+
     signature = fields.Binary(
         string="Firma"
     )
@@ -136,14 +136,14 @@ class EstateProperty(models.Model):
 
     offer_count = fields.Integer(string='Offers',
         compute='_compute_offer_count' )
-    
-    garden_area = fields.Integer(string='Garden Area [m2]')    
+
+    garden_area = fields.Integer(string='Garden Area [m2]')
 
     total_area = fields.Integer(
             string='Total Area [m²]',
             compute='_compute_total_area',
             store=True
-        ) 
+        )
 
     @api.depends('living_area', 'garden_area')
     def _compute_total_area(self):
@@ -154,8 +154,8 @@ class EstateProperty(models.Model):
     def _compute_offer_count(self):
         for record in self:
             record.offer_count = len(record.offer_ids)
-    
-    def action_open_estate_property_offers(self):   
+
+    def action_open_estate_property_offers(self):
         context = self.env.context
 
         if context.get('my_flag'):
@@ -184,11 +184,10 @@ class EstateProperty(models.Model):
                 'sticky': False,
             }
         }
-        
-    
+
+
     def action_sold(self):
-        for record in self:            
-            import wdb;wdb.set_trace(server='127.0.0.1', port=19840)
+        for record in self:
             if record.state == 'sold':
                 raise UserError(_("This property is already sold."))
 
@@ -202,19 +201,18 @@ class EstateProperty(models.Model):
             record.state = 'sold'
 
 
-    
-    
+
+
     def write(self, values):
         """
             Update all record(s) in recordset, with new value comes as {values}
             return True on success, False otherwise
-    
+
             @param values: dict of new values to be set
-    
+
             @return: True on success, False otherwise
         """
 
-        result = super().write(values)        
-        
+        result = super().write(values)
+
         return result
-    
