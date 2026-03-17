@@ -6,7 +6,9 @@
     <menuitem id="estate_properties_menu_root" name="Real State" sequence="10" >
         <menuitem id="estate_property_menu" name="Properties" sequence="10" action="action_estate_property" />
         <menuitem id="rs_estate_property_menu" name="RS Properties" sequence="10" action="action_rs_estate_property" />
-        
+
+        <menuitem id="rs_realstate_report_menu" name="Reports" sequence="70"  />
+
         <menuitem id="rs_realstate_config_menu" name="Configuration" sequence="90"  />
     </menuitem>
 
@@ -39,6 +41,16 @@
         parent="rs_realstate.rs_realstate_config_menu"
         action="action_estate_property_category"
         sequence="40"
+    />
+
+
+    <!-- MENU -->
+    <menuitem
+        id="menu_estate_property_offer_report"
+        name="Property Offers Report"
+        parent="rs_realstate_report_menu"
+        action="action_estate_property_offer_report"
+        sequence="50"
     />
 
 </odoo>

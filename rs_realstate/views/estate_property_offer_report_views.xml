@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- LIST VIEW -->
+    <record id="view_estate_property_offer_report_list" model="ir.ui.view">
+        <field name="name">estate.property.offer.report.list</field>
+        <field name="model">estate.property.offer.report</field>
+        <field name="arch" type="xml">
+            <list string="Property Offers Report" create="false" edit="false" delete="false">
+                <field name="property_id"/>
+                <field name="property_name"/>
+                <field name="offer_id"/>
+                <field name="partner_id"/>
+                <field name="salesperson_id"/>
+                <field name="property_type_id"/>
+                <field name="expected_price" sum="Total Expected Price"/>
+                <field name="offer_price" sum="Total Offer Price"/>
+                <field name="selling_price" sum="Total Selling Price"/>
+                <field name="offer_status"/>
+                <field name="property_state"/>
+                <field name="validity"/>
+                <field name="date_deadline"/>
+                <field name="garden"/>
+                <field name="living_area" sum="Total Living Area"/>
+                <field name="garden_area" sum="Total Garden Area"/>
+                <field name="total_area" sum="Total Area"/>
+                <field name="create_date"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_estate_property_offer_report_form" model="ir.ui.view">
+        <field name="name">estate.property.offer.report.form</field>
+        <field name="model">estate.property.offer.report</field>
+        <field name="arch" type="xml">
+            <form string="Property Offer Report" create="false" edit="false" delete="false">
+                <sheet>
+                    <group>
+                        <group string="Property Information">
+                            <field name="property_id"/>
+                            <field name="property_name"/>
+                            <field name="property_type_id"/>
+                            <field name="salesperson_id"/>
+                            <field name="property_state"/>
+                            <field name="garden"/>
+                        </group>
+                        <group string="Offer Information">
+                            <field name="offer_id"/>
+                            <field name="partner_id"/>
+                            <field name="offer_status"/>
+                            <field name="validity"/>
+                            <field name="date_deadline"/>
+                            <field name="create_date"/>
+                        </group>
+                    </group>
+
+                    <group string="Prices and Areas" col="4">
+                        <field name="expected_price"/>
+                        <field name="offer_price"/>
+                        <field name="selling_price"/>
+                        <field name="living_area"/>
+                        <field name="garden_area"/>
+                        <field name="total_area"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- SEARCH VIEW -->
+    <record id="view_estate_property_offer_report_search" model="ir.ui.view">
+        <field name="name">estate.property.offer.report.search</field>
+        <field name="model">estate.property.offer.report</field>
+        <field name="arch" type="xml">
+            <search string="Search Property Offers Report">
+                <field name="property_id"/>
+                <field name="property_name"/>
+                <field name="offer_id"/>
+                <field name="partner_id"/>
+                <field name="salesperson_id"/>
+                <field name="property_type_id"/>
+                <field name="offer_status"/>
+                <field name="property_state"/>
+                <field name="date_deadline"/>
+                <field name="create_date"/>
+
+                <filter string="Accepted Offers" name="filter_accepted_offers" domain="[('offer_status', '=', 'accepted')]"/>
+                <filter string="Refused Offers" name="filter_refused_offers" domain="[('offer_status', '=', 'refused')]"/>
+                <filter string="With Garden" name="filter_with_garden" domain="[('garden', '=', True)]"/>
+                <filter string="Sold Properties" name="filter_sold_properties" domain="[('property_state', '=', 'sold')]"/>
+                <filter string="Canceled Properties" name="filter_canceled_properties" domain="[('property_state', '=', 'canceled')]"/>
+
+                <separator/>
+
+                <filter string="My Properties" name="filter_my_properties" domain="[('salesperson_id', '=', uid)]"/>
+
+                <separator/>
+
+                <filter string="Created Today" name="filter_created_today" domain="[('create_date', '&gt;=', context_today())]"/>
+                <filter string="Deadline Today" name="filter_deadline_today" domain="[('date_deadline', '=', context_today())]"/>
+
+                <group expand="0" string="Group By">
+                    <filter string="Property" name="group_by_property" context="{'group_by': 'property_id'}"/>
+                    <filter string="Customer" name="group_by_partner" context="{'group_by': 'partner_id'}"/>
+                    <filter string="Salesperson" name="group_by_salesperson" context="{'group_by': 'salesperson_id'}"/>
+                    <filter string="Property Type" name="group_by_property_type" context="{'group_by': 'property_type_id'}"/>
+                    <filter string="Offer Status" name="group_by_offer_status" context="{'group_by': 'offer_status'}"/>
+                    <filter string="Property Status" name="group_by_property_state" context="{'group_by': 'property_state'}"/>
+                    <filter string="Creation Date" name="group_by_create_date" context="{'group_by': 'create_date:day'}"/>
+                    <filter string="Deadline" name="group_by_deadline" context="{'group_by': 'date_deadline'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- PIVOT VIEW -->
+    <record id="view_estate_property_offer_report_pivot" model="ir.ui.view">
+        <field name="name">estate.property.offer.report.pivot</field>
+        <field name="model">estate.property.offer.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Property Offers Analysis">
+                <field name="property_type_id" type="row"/>
+                <field name="salesperson_id" type="row"/>
+                <field name="offer_status" type="col"/>
+                <field name="offer_price" type="measure"/>
+                <field name="expected_price" type="measure"/>
+                <field name="selling_price" type="measure"/>
+                <field name="living_area" type="measure"/>
+                <field name="garden_area" type="measure"/>
+                <field name="total_area" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- ACTION -->
+    <record id="action_estate_property_offer_report" model="ir.actions.act_window">
+        <field name="name">Property Offers Report</field>
+        <field name="res_model">estate.property.offer.report</field>
+        <field name="view_mode">list,form,pivot</field>
+        <field name="search_view_id" ref="view_estate_property_offer_report_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Analyze property offers from a SQL report model.
+            </p>
+        </field>
+    </record>
+
+
+
+</odoo>

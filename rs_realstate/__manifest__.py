@@ -37,6 +37,7 @@ Long description of module's purpose
         'views/res_partner_views.xml',
         'views/rs_estate_property_views.xml',
         'views/rs_estate_property_offer_views.xml',
+        'views/estate_property_offer_report_views.xml',
 
         'wizards/offer_asistant_wizard.xml',
         'views/rs_realstate_menu.xml',
