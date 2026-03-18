@@ -17,24 +17,10 @@ class EstateProperty(models.Model):
 
     @api.model_create_multi
     def create(self, vals_list):
-        """
-            Create a new record for a model ModelName
-            @param values: provides a data for new record
-
-            @return: returns a id of new record
-        """
         for vals in vals_list:
-            if vals.get('name', _("New")) == _("New"):
-                vals['name'] = self.env['ir.sequence'].with_company(vals.get('company_id')).next_by_code(
-                    'estate.property') or _("New")
-        # n next line of code
-        # c continue without stop
-        # l show lines of code
-        # CTRL-D CTRL-INTERRUP stop all
-
-        res = super().create(vals_list)
-        return res
-
+            if vals.get('name', _('New')) == _('New'):
+                vals['name'] = self.env['ir.sequence'].next_by_code('estate.property') or _('New')
+        return super().create(vals_list)
 
     name = fields.Char(
         string='Anounce Title',
@@ -59,7 +45,7 @@ class EstateProperty(models.Model):
     selling_price = fields.Monetary(string='Selling Price',currency_field="currency_id")
 
     bedrooms = fields.Integer(string='Bedrooms')
-    living_area = fields.Integer(string='Living Area [m2]')
+    living_area = fields.Integer(string='Living Area [m2]',tracking=True)
 
     garage = fields.Boolean(string='Garage')
     garden = fields.Boolean(string='Garden')
@@ -80,6 +66,7 @@ class EstateProperty(models.Model):
                     ('sold', 'Sold')],
         default='draft',
         readonly=False,
+        tracking=True,
     )
 
     categ_ids = fields.Many2many(
@@ -93,7 +80,7 @@ class EstateProperty(models.Model):
         comodel_name='res.users',
         string="Salesperson",
         readonly=False, index=True,
-        tracking=2,)
+        tracking=True,)
 
     brochure = fields.Binary(string='Brochure')
 
@@ -216,3 +203,142 @@ class EstateProperty(models.Model):
         result = super().write(values)
 
         return result
+
+    def action_update_property_state(self):
+        for rec in self:
+            accepted_offer = self.env['estate.property.offer'].search([
+                ('property_id', '=', rec.id),
+                ('state', '=', 'accepted'),
+            ], limit=1)
+
+            if accepted_offer:
+                rec.state = 'accepted'
+
+    def action_update_property_state_sold(self,message_by=None):
+        for rec in self:
+            accepted_offer = self.env['estate.property.offer'].search([
+                ('property_id', '=', rec.id),
+                ('state', '=', 'sold'),
+            ], limit=1)
+            #import wdb;wdb.set_trace()
+
+            if accepted_offer:
+                rec.state = 'sold'
+                rec.message_post(
+                    body=_(
+                        "🏁 Property SOLD via offer from \n%s\n for \n%s %s\n %s"
+                    ) % (
+                        accepted_offer.partner_id.display_name,
+                        accepted_offer.price,
+                        accepted_offer.currency_id.name,
+                        message_by or '',
+                    )
+                )
+
+
+    def action_update_property_state_sold_cron(self):
+        records = self.env['estate.property'].search([
+                ('state', '=', 'accepted'),
+            ], limit=1)
+        for rec in records:
+            accepted_offer = self.env['estate.property.offer'].search([
+                ('property_id', '=', rec.id),
+                ('state', '=', 'sold'),
+            ], limit=1)
+
+            if accepted_offer:
+                rec.state = 'sold'
+
+
+    @api.depends('name', 'partner_id', 'property_type_id')
+    def _compute_display_name(self):
+        for rec in self:
+            parts = [
+                f"[{rec.name}]"
+                ]
+
+            if rec.partner_id:
+                parts.append(rec.partner_id.name)
+
+            if rec.property_type_id:
+                parts.append(rec.property_type_id.name)
+
+            rec.display_name = " - ".join(parts)
+
+    def unlink(self):
+        for rec in self:
+            if rec.state != 'draft':
+                raise UserError(
+                    _("Only properties in status 'New' can be deleted.")
+                )
+
+            if rec.offer_ids:
+                raise UserError(
+                    _("You cannot delete a property that has offers.")
+                )
+
+        return super().unlink()
+
+
+    def read(self, fields=None, load='_classic_read'):
+        result = super().read(fields, load=load)
+
+        for rec in self:
+            _logger = self.env['ir.logging']
+            self.env.user
+            _logger.create({
+                'name': 'estate.property.read',
+                'type': 'server',
+                'level': 'INFO',
+                'message': f"Property viewed: {rec.name} by {self.env.user.name} what ammazing",
+                'path': 'estate.property',
+                'func': 'read',
+                'line': '0',
+            })
+
+        return result
+
+    def action_send_email(self):
+        self.ensure_one()
+
+        template = self.env.ref(
+            'rs_realstate.mail_template_estate_property',
+            raise_if_not_found=False
+        )
+
+        ctx = {
+            'default_model': 'estate.property',
+            'default_res_ids': self.ids,
+            'default_composition_mode': 'comment',
+            'default_email_layout_xmlid': 'mail.mail_notification_layout_with_responsible_signature',
+            'email_notification_allow_footer': True,
+            'force_email': True,
+            'model_description': _('Property'),
+        }
+
+        if template:
+            ctx.update({
+                'default_template_id': template.id,
+            })
+
+        return {
+            'type': 'ir.actions.act_window',
+            'view_mode': 'form',
+            'res_model': 'mail.compose.message',
+            'views': [(False, 'form')],
+            'view_id': False,
+            'target': 'new',
+            'context': ctx,
+        }
+
+    def action_send_mail_direct(self):
+        self.ensure_one()
+        template = self.env.ref('rs_realstate.mail_template_estate_property')
+        lang = (
+                (self.partner_id.lang if self.partner_id else False)
+                or (self.user_id.lang if self.user_id else False)
+                or (self.company_id.partner_id.lang if self.company_id and self.company_id.partner_id else False)
+                or self.env.lang
+                or 'en_US'
+                )
+        template.with_context(lang=lang).send_mail(self.id, force_send=True)

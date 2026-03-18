@@ -9,9 +9,8 @@
         <field name="mode">primary</field>
         <field name="priority" eval="16" />
         <field name="arch" type="xml">
-            <list string="Properties" create="true" delete="true" edit="true">
-                <field name="active" invisible="1"/>
-                <field name="name" />
+            <list string="Properties" create="true" delete="true" edit="false">
+                <field name="display_name" string="Property" />
                 <field name="partner_id" />
                 <field name="property_type_id"/>
                 <field name="postcode"/>
@@ -25,6 +24,7 @@
                 <field name="total_area" readonly="1"/>
                 <field name="categ_ids" widget="many2many_tags" options="{'color_field': 'color'}" />
                 <field name="state" decoration-success="state == 'sold'" decoration-info="state == 'draft'" decoration-primary="state == 'accepted'"  widget="badge" optional="hide"/>
+                <field name="active" optional="hide"/>
             </list>
         </field>
     </record>
@@ -54,6 +54,15 @@
                         context="{'my_flag': False }"
                     />
 
+                    <button name="action_send_email"
+                            type="object"
+                            string="Enviar correo"
+                            class="btn-primary"/>
+
+                    <button name="action_send_mail_direct"
+                            type="object"
+                            string="Enviar correo directo"
+                            class="btn-primary"/>
 
                 </header>
 

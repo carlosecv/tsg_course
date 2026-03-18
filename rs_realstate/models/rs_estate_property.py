@@ -41,3 +41,5 @@ class RsProperty(models.Model):
                 'sticky': False,
             }
         }
+
+

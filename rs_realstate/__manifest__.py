@@ -43,6 +43,9 @@ Long description of module's purpose
         'views/rs_realstate_menu.xml',
         'data/ir_sequence.xml',
         'data/ir_config_parameter.xml',
+        'data/ir_action_server.xml',
+        'data/ir_cron.xml',
+        'data/mail_template.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

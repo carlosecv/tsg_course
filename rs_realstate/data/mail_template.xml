@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data >
+         <!-- Email template for estate property -->
+
+       <!--  <record id="mail_template_estate_property" model="mail.template">
+            <field name="name">Estate: Send Property</field>
+            <field name="model_id" ref="model_estate_property"/>
+            <field name="subject">Property Information (Ref {{ object.name or 'n/a' }})</field>
+            <field name="email_from">{{ user.email_formatted }}</field>
+            <field name="partner_to">{{ object.partner_id.id }}</field>
+            <field name="description">Used to send property information to the customer</field>
+            <field name="report_template_ids" eval="[(4, ref('rs_realstate.action_report_estate_property'))]"/>
+            <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px;">
+            <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                <t t-set="property_label" t-value="'property' if object.state != 'sold' else 'sold property'"/>
+                Hola,
+                <br/><br/>
+                Te compartimos la información de la
+                <span style="font-weight: bold;" t-out="object. display_name or ''"/>
+                <br/><br/>
+
+                <t t-if="object.partner_id">
+                    Cliente:
+                    <span style="font-weight: bold;" t-out="object.partner_id.name or ''"/>
+                    <br/>
+                </t>
+</p>
+        </div>
+            </field>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+        </record> -->
+
+        <record id="mail_template_estate_property" model="mail.template">
+            <field name="name">Estate: Send Property</field>
+            <field name="model_id" ref="model_estate_property"/>
+            <field name="subject">Property Information (Ref {{ object.display_name or 'n/a' }})</field>
+            <field name="email_from">{{ user.email_formatted }}</field>
+            <field name="partner_to">{{ object.partner_id.id }}</field>
+            <field name="description">Used to send property information to the customer</field>
+            <field name="report_template_ids" eval="[(4, ref('rs_realstate.action_report_estate_property'))]"/>
+            <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px;">
+            <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                <t t-set="property_label" t-value="'property' if object.state != 'sold' else 'sold property'"/>
+                Hello,
+                <br/><br/>
+
+                We are sharing with you the information of the
+                <span style="font-weight: bold;" t-out="object.display_name or ''"/>
+                <br/><br/>
+
+                <t t-if="object.partner_id">
+                    Customer:
+                    <span style="font-weight: bold;" t-out="object.partner_id.name or ''"/>
+                    <br/>
+                </t>
+
+                <br/>
+                Please do not hesitate to contact us if you have any questions.
+                <br/><br/>
+
+                <t t-out="user.name"/>
+                <br/><br/>
+            </p>
+        </div>
+            </field>
+
+            <field name="lang">{{ object.partner_id.lang }}</field>
+        </record>
+    </data>
+</odoo>
