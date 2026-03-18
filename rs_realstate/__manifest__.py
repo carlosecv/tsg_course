@@ -50,5 +50,6 @@ Long description of module's purpose
         'demo/estate_property_type_demo.xml',
         'demo/estate_property_demo.xml',
     ],
+    'application': False,
 }
 
