@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <data>
+
+        <record id="my_partner_1" model="res.partner">
+            <field name="name">Property Sell Demo Partner</field>
+        </record>
+
+
+        <record id="my_partner_8" model="res.partner">
+            <field name="name">Property Sell Demo Partner II</field>
+        </record>
+
+
+
+    </data>
+
+</odoo>

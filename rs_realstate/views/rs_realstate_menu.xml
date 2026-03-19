@@ -7,6 +7,8 @@
     web_icon="rs_realstate,static/description/icon.png"
     >
         <menuitem id="estate_property_menu" name="Properties" sequence="10" action="action_estate_property" />
+        <menuitem id="estate_property_secondary_menu" name="Properties (Secondary)" sequence="20" action="action_estate_property_secondary" />
+
         <menuitem id="rs_estate_property_menu" name="RS Properties" sequence="10" action="action_rs_estate_property" />
 
         <menuitem id="rs_realstate_report_menu" name="Reports" sequence="70"  />

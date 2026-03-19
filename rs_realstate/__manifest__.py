@@ -21,7 +21,9 @@ Long description of module's purpose
     'depends': ['base','mail',
     'web_map',
     'web_gantt',
-    'base_geolocalize'],
+    'base_geolocalize',
+    'product',
+    'mrp'],
 
     # always loaded
     'data': [
@@ -46,6 +48,8 @@ Long description of module's purpose
         'data/ir_action_server.xml',
         'data/ir_cron.xml',
         'data/mail_template.xml',
+        'data/res_partner.xml',
+        'data/mrp.bom.csv'
     ],
     # only loaded in demonstration mode
     'demo': [

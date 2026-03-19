@@ -12,4 +12,21 @@ if records:
         </field>
     </record>
 
+
+    <record id="action_server_estate_property_webhook" model="ir.actions.server">
+        <field name="name">Explotar una api</field>
+        <field name="model_id" ref="model_estate_property"/>
+        <field name="binding_model_id" ref="model_estate_property"/>
+        <field name="binding_type">action</field>
+        <field name="state">webhook</field>
+        <field name="webhook_url">https://n8n.roodsys.com/webhook-test/6b59fbb3-6f12-441e-a0a5-00d2c8b9c304</field>
+        <field name="webhook_field_ids" eval="[
+            (6, 0, [
+                ref('rs_realstate.field_estate_property__name'),
+                ref('rs_realstate.field_estate_property__bedrooms')
+            ])
+        ]"/>
+    </record>
+
+
 </odoo>

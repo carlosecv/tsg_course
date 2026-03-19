@@ -1,0 +1,4 @@
+id,company_id,product_tmpl_id,code,sequence,type,bom_line_ids/id,bom_line_ids/product_qty,bom_line_ids/product_id,bom_line_ids/sequence,bom_line_ids/product_uom_id
+mrp.mrp_bom_manufacture_rs,My Company (San Francisco),[FURN_7800] Desk Combination,,1,Fabricar este producto,rs_line_1,700.0,[FURN_0269] Office Chair Black,5,Units
+,,,,,,rs_line_2,76.0,[FURN_1118] Corner Desk Left Sit,5,Units
+,,,,,,rs_line_3,40.0,[FURN_8900] Drawer Black,5,Units

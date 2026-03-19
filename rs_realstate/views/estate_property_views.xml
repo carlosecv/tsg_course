@@ -398,6 +398,10 @@
         <field name="view_mode">list,form,kanban,map,pivot</field>
         <field name="target">current</field>
         <field name="search_view_id" ref="view_estate_property_search" />
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('rs_realstate.view_estate_property_list')}),
+            (0, 0, {'view_mode': 'kanban', 'view_id': ref('rs_realstate.view_estate_property_kanban')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('rs_realstate.view_estate_property_form')})]"/>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
                 Click to add new Properties at Offer
@@ -407,6 +411,71 @@
         </field>
     </record>
 
+
+    <!-- model.name form view -->
+    <record id="estate_property_view_form_secondary" model="ir.ui.view">
+        <field name="name">estate.property.view.form.secondary</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <form string="Property">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" />
+                        <h1>
+                            <field name="name" class="oe_inline"
+                                placeholder="name" readonly="1" force_save="1" />
+                        </h1>
+                        <span class="d-block p-2 bg-primary text-white">
+                            <label for='categ_ids' />
+                            <field name="categ_ids" widget="many2many_tags" options="{'color_field': 'color'}" />
+                        </span>
+
+                    </div>
+
+                    <group>
+
+                        <field name="partner_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_estate_property_list_secondary" model="ir.ui.view">
+        <field name="name">view.estate.property.list.secondary</field>
+        <field name="model">estate.property</field>
+        <field name="mode">primary</field>
+        <field name="priority" eval="16" />
+        <field name="arch" type="xml">
+            <list string="Properties" create="true" delete="true" edit="false">
+                <field name="display_name" string="Property" />
+                <field name="partner_id" />
+                <field name="property_type_id"/>
+                <field name="categ_ids" widget="many2many_tags" options="{'color_field': 'color'}" />
+            </list>
+        </field>
+    </record>
+
+
+    <record id="action_estate_property_secondary" model="ir.actions.act_window">
+        <field name="type">ir.actions.act_window</field>
+        <field name="name">Properties</field>
+        <field name="res_model">estate.property</field>
+        <field name="view_mode">list,form,kanban,map,pivot</field>
+        <field name="target">current</field>
+        <field name="search_view_id" ref="view_estate_property_search" />
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('rs_realstate.view_estate_property_list_secondary')}),
+            (0, 0, {'view_mode': 'kanban', 'view_id': ref('rs_realstate.view_estate_property_kanban')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('rs_realstate.estate_property_view_form_secondary')})]"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to add new Properties at Offer
+            </p><p>
+                This are the properties to sell.
+            </p>
+        </field>
+    </record>
 
 
 </odoo>
