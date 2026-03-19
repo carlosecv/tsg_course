@@ -6,14 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-18 21:23+0000\n"
-"PO-Revision-Date: 2026-03-18 21:23+0000\n"
+"POT-Creation-Date: 2026-03-19 03:09+0000\n"
+"PO-Revision-Date: 2026-03-18 21:10-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: es_MX\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.9\n"
 
 #. module: rs_realstate
 #: model:ir.actions.report,print_report_name:rs_realstate.action_report_estate_property
@@ -25,22 +27,26 @@ msgstr "'Propiedad - %s' % (object.name)"
 msgid ""
 "<div style=\"margin: 0px; padding: 0px;\">\n"
 "            <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
-"                <t t-set=\"property_label\" t-value=\"'property' if object.state != 'sold' else 'sold property'\"/>\n"
+"                <t t-set=\"property_label\" t-value=\"'property' if "
+"object.state != 'sold' else 'sold property'\"/>\n"
 "                Hello,\n"
 "                <br/><br/>\n"
 "\n"
 "                We are sharing with you the information of the\n"
-"                <span style=\"font-weight: bold;\" t-out=\"object.display_name or ''\"/>\n"
+"                <span style=\"font-weight: bold;\" t-"
+"out=\"object.display_name or ''\"/>\n"
 "                <br/><br/>\n"
 "\n"
 "                <t t-if=\"object.partner_id\">\n"
 "                    Customer:\n"
-"                    <span style=\"font-weight: bold;\" t-out=\"object.partner_id.name or ''\"/>\n"
+"                    <span style=\"font-weight: bold;\" t-"
+"out=\"object.partner_id.name or ''\"/>\n"
 "                    <br/>\n"
 "                </t>\n"
 "\n"
 "                <br/>\n"
-"                Please do not hesitate to contact us if you have any questions.\n"
+"                Please do not hesitate to contact us if you have any "
+"questions.\n"
 "                <br/><br/>\n"
 "\n"
 "                <t t-out=\"user.name\"/>\n"
@@ -51,16 +57,19 @@ msgid ""
 msgstr ""
 "<div style=\"margin: 0px; padding: 0px;\">\n"
 "            <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
-"               <t t-set=\"property_label\" t-value=\"'property' if object.state != 'sold' else 'sold property'\"/> \n"
+"               <t t-set=\"property_label\" t-value=\"'property' if "
+"object.state != 'sold' else 'sold property'\"/> \n"
 "                Hola,\n"
 "               <br/><br/> \n"
 "                Te compartimos la información de la\n"
-"               <span style=\"font-weight: bold;\" t-out=\"object. display_name or ''\"/>\n"
+"               <span style=\"font-weight: bold;\" t-out=\"object. "
+"display_name or ''\"/>\n"
 "                <br/><br/> \n"
 "\n"
 "                \n"
 " <t t-if=\"object.partner_id\">                   Cliente:\n"
-"                   <span style=\"font-weight: bold;\" t-out=\"object.partner_id.name or ''\"/>\n"
+"                   <span style=\"font-weight: bold;\" t-"
+"out=\"object.partner_id.name or ''\"/>\n"
 "                    <br/> \n"
 "                \n"
 " </t></p>\n"
@@ -310,6 +319,7 @@ msgstr "Categoría"
 #. module: rs_realstate
 #: model_terms:ir.actions.act_window,help:rs_realstate.action_estate_property
 #: model_terms:ir.actions.act_window,help:rs_realstate.action_estate_property_offer
+#: model_terms:ir.actions.act_window,help:rs_realstate.action_estate_property_secondary
 #: model_terms:ir.actions.act_window,help:rs_realstate.action_rs_estate_property
 #: model_terms:ir.actions.act_window,help:rs_realstate.action_rs_estate_property_offer
 msgid "Click to add new Properties at Offer"
@@ -318,7 +328,7 @@ msgstr "Haga clic para agregar nuevas propiedades a la oferta."
 #. module: rs_realstate
 #: model:ir.model.fields,field_description:rs_realstate.field_estate_property_category__color
 msgid "Color"
-msgstr ""
+msgstr "Color"
 
 #. module: rs_realstate
 #: model:ir.ui.menu,name:rs_realstate.rs_realstate_config_menu
@@ -463,8 +473,9 @@ msgstr "Días transcurridos"
 
 #. module: rs_realstate
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_form
+#, fuzzy
 msgid "Enviar correo"
-msgstr ""
+msgstr "Enviar correo"
 
 #. module: rs_realstate
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_form
@@ -489,10 +500,17 @@ msgid "Expected Price"
 msgstr "Precio esperado"
 
 #. module: rs_realstate
+#: model:ir.actions.server,name:rs_realstate.action_server_estate_property_webhook
+#, fuzzy
+msgid "Explotar una api"
+msgstr "Utilizar una API"
+
+#. module: rs_realstate
 #: model:ir.model.fields,field_description:rs_realstate.field_estate_property__signature
 #: model:ir.model.fields,field_description:rs_realstate.field_rs_estate_property__signature
+#, fuzzy
 msgid "Firma"
-msgstr ""
+msgstr "Firma"
 
 #. module: rs_realstate
 #: model:ir.model.fields,field_description:rs_realstate.field_estate_property__message_follower_ids
@@ -567,7 +585,7 @@ msgstr "Tiene mensaje"
 #: model:ir.model.fields,field_description:rs_realstate.field_rs_estate_property__id
 #: model:ir.model.fields,field_description:rs_realstate.field_rs_estate_property_offer__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: rs_realstate
 #: model:ir.model.fields,field_description:rs_realstate.field_estate_property__activity_exception_icon
@@ -616,8 +634,9 @@ msgstr "Imagen 256"
 #. module: rs_realstate
 #: model:ir.model.fields,field_description:rs_realstate.field_estate_property__image_1920
 #: model:ir.model.fields,field_description:rs_realstate.field_rs_estate_property__image_1920
+#, fuzzy
 msgid "Imagen"
-msgstr ""
+msgstr "Imagen"
 
 #. module: rs_realstate
 #: model:ir.model.fields,field_description:rs_realstate.field_estate_property__message_is_follower
@@ -822,20 +841,23 @@ msgstr "Estado de la oferta"
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property_offer.py:0
+#, fuzzy
 msgid "Offer canceled from <b>%s</b> for <b>%s %s</b>."
-msgstr ""
+msgstr "Oferta cancelada de <b>%s</b> a <b>%s %s</b>."
 
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property_offer.py:0
+#, fuzzy
 msgid "Offer rejected from <b>%s</b> for <b>%s %s</b>."
-msgstr ""
+msgstr "Oferta rechazada de <b>%s</b> por <b>%s %s</b>."
 
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property_offer.py:0
+#, fuzzy
 msgid "Offer reset to draft for customer <b>%s</b>."
-msgstr ""
+msgstr "Restablecer la oferta como borrador para el cliente <b>%s</b>."
 
 #. module: rs_realstate
 #: model:ir.model.fields,field_description:rs_realstate.field_estate_property__offer_count
@@ -865,20 +887,24 @@ msgstr "Oferta recibida"
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property_offer.py:0
+#, fuzzy
 msgid "Only an accepted offer can be marked as sold."
-msgstr ""
+msgstr "Solo una oferta aceptada puede marcarse como vendida."
 
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property_offer.py:0
+#, fuzzy
 msgid "Only draft offers can be accepted."
-msgstr ""
+msgstr "Solo se aceptarán ofertas preliminares."
 
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property.py:0
+#, fuzzy
 msgid "Only properties in status 'New' can be deleted."
 msgstr ""
+"Solo se pueden eliminar las propiedades que tengan el estado «Nuevo»."
 
 #. module: rs_realstate
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_form
@@ -889,14 +915,16 @@ msgstr "Ofertas abiertas"
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/wizards/offer_asistant_wizard.py:0
+#, fuzzy
 msgid "Please select a Customer for the Offer."
-msgstr ""
+msgstr "Seleccione un cliente para la oferta."
 
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/wizards/offer_asistant_wizard.py:0
+#, fuzzy
 msgid "Please select a Property Address."
-msgstr ""
+msgstr "Seleccione una dirección de propiedad."
 
 #. module: rs_realstate
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_offer_report_form
@@ -905,10 +933,12 @@ msgstr "Precios y zonas"
 
 #. module: rs_realstate
 #: model:ir.actions.act_window,name:rs_realstate.action_estate_property
+#: model:ir.actions.act_window,name:rs_realstate.action_estate_property_secondary
 #: model:ir.actions.act_window,name:rs_realstate.action_rs_estate_property
 #: model:ir.ui.menu,name:rs_realstate.estate_property_menu
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_form
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_list
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_list_secondary
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_offer_form
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_offer_list
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_offer_search
@@ -921,6 +951,12 @@ msgstr "Precios y zonas"
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_rs_estate_property_search
 msgid "Properties"
 msgstr "Propiedades"
+
+#. module: rs_realstate
+#: model:ir.ui.menu,name:rs_realstate.estate_property_secondary_menu
+#, fuzzy
+msgid "Properties (Secondary)"
+msgstr "Propiedades (Secundarias)"
 
 #. module: rs_realstate
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_pivot
@@ -941,9 +977,11 @@ msgstr "Mapa de propiedades"
 #: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__property_id
 #: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer_report__property_id
 #: model:ir.model.fields,field_description:rs_realstate.field_rs_estate_property_offer__property_id
+#: model_terms:ir.ui.view,arch_db:rs_realstate.estate_property_view_form_secondary
 #: model_terms:ir.ui.view,arch_db:rs_realstate.offer_asistant_wizard_view_form
 #: model_terms:ir.ui.view,arch_db:rs_realstate.res_partner_is_property_search_inh
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_list
+#: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_list_secondary
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_offer_report_search
 msgid "Property"
 msgstr "Propiedad"
@@ -1006,8 +1044,9 @@ msgstr "Informe de oferta inmobiliaria"
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property.py:0
+#, fuzzy
 msgid "Property Offers"
-msgstr ""
+msgstr "Ofertas inmobiliarias"
 
 #. module: rs_realstate
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_offer_report_pivot
@@ -1057,14 +1096,16 @@ msgstr "Propiedad:"
 
 #. module: rs_realstate
 #: model:ir.ui.menu,name:rs_realstate.rs_estate_property_menu
+#, fuzzy
 msgid "RS Properties"
-msgstr ""
+msgstr "RS Properties"
 
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/rs_estate_property.py:0
+#, fuzzy
 msgid "RS Property Offers"
-msgstr ""
+msgstr "Ofertas inmobiliarias de RS"
 
 #. module: rs_realstate
 #: model:ir.ui.menu,name:rs_realstate.estate_properties_menu_root
@@ -1208,17 +1249,19 @@ msgstr ""
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property_offer.py:0
 msgid "Success"
-msgstr ""
+msgstr "Éxito"
 
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property_offer.py:0
+#, fuzzy
 msgid "The action was executed successfully."
-msgstr ""
+msgstr "La acción se ha realizado correctamente."
 
 #. module: rs_realstate
 #: model_terms:ir.actions.act_window,help:rs_realstate.action_estate_property
 #: model_terms:ir.actions.act_window,help:rs_realstate.action_estate_property_offer
+#: model_terms:ir.actions.act_window,help:rs_realstate.action_estate_property_secondary
 #: model_terms:ir.actions.act_window,help:rs_realstate.action_rs_estate_property
 #: model_terms:ir.actions.act_window,help:rs_realstate.action_rs_estate_property_offer
 msgid "This are the properties to sell."
@@ -1227,32 +1270,37 @@ msgstr "Estas son las propiedades en venta."
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property_offer.py:0
+#, fuzzy
 msgid "This offer is already canceled."
-msgstr ""
+msgstr "Esta oferta ya ha sido cancelada."
 
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property_offer.py:0
+#, fuzzy
 msgid "This offer is already rejected."
-msgstr ""
+msgstr "Esta oferta ya ha sido rechazada."
 
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property_offer.py:0
+#, fuzzy
 msgid "This property already has a sold offer."
-msgstr ""
+msgstr "Esta propiedad ya tiene una oferta de compra."
 
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property_offer.py:0
+#, fuzzy
 msgid "This property already has an accepted offer."
-msgstr ""
+msgstr "Esta propiedad ya tiene una oferta aceptada."
 
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property.py:0
+#, fuzzy
 msgid "This property is already sold."
-msgstr ""
+msgstr "Esta propiedad ya está vendida."
 
 #. module: rs_realstate
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_form
@@ -1329,6 +1377,22 @@ msgid "Validity Days"
 msgstr "Días de validez"
 
 #. module: rs_realstate
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property__website_message_ids
+#: model:ir.model.fields,field_description:rs_realstate.field_estate_property_offer__website_message_ids
+#: model:ir.model.fields,field_description:rs_realstate.field_rs_estate_property__website_message_ids
+#: model:ir.model.fields,field_description:rs_realstate.field_rs_estate_property_offer__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: rs_realstate
+#: model:ir.model.fields,help:rs_realstate.field_estate_property__website_message_ids
+#: model:ir.model.fields,help:rs_realstate.field_estate_property_offer__website_message_ids
+#: model:ir.model.fields,help:rs_realstate.field_rs_estate_property__website_message_ids
+#: model:ir.model.fields,help:rs_realstate.field_rs_estate_property_offer__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicaciones del sitio web"
+
+#. module: rs_realstate
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_offer_report_search
 msgid "With Garden"
 msgstr "Con jardín"
@@ -1336,26 +1400,33 @@ msgstr "Con jardín"
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property.py:0
+#, fuzzy
 msgid "You cannot delete a property that has offers."
-msgstr ""
+msgstr "No se puede eliminar una propiedad que tenga ofertas."
 
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property_offer.py:0
+#, fuzzy
 msgid "You cannot reject an accepted offer. Cancel it first if needed."
 msgstr ""
+"No puedes rechazar una oferta aceptada. Si es necesario, cancélala primero."
 
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property_offer.py:0
+#, fuzzy
 msgid "You cannot reset an accepted offer to draft."
 msgstr ""
+"No es posible volver a marcar como borrador una oferta que ya ha sido "
+"aceptada."
 
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property.py:0
+#, fuzzy
 msgid "You cannot sell a property without an accepted offer."
-msgstr ""
+msgstr "No se puede vender una propiedad sin una oferta aceptada."
 
 #. module: rs_realstate
 #: model:ir.model.fields,field_description:rs_realstate.field_estate_property__postcode
@@ -1371,9 +1442,10 @@ msgstr "Por ejemplo, apartamento."
 #. module: rs_realstate
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_kanban
 msgid "m²"
-msgstr ""
+msgstr "m²"
 
 #. module: rs_realstate
+#: model_terms:ir.ui.view,arch_db:rs_realstate.estate_property_view_form_secondary
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_form
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_estate_property_offer_form
 #: model_terms:ir.ui.view,arch_db:rs_realstate.view_rs_estate_property_form
@@ -1388,8 +1460,9 @@ msgstr "ofrecer.asistente.asistente.acción"
 
 #. module: rs_realstate
 #: model:ir.model,name:rs_realstate.model_rs_estate_property
+#, fuzzy
 msgid "rs.estate.property"
-msgstr ""
+msgstr "rs.estate.property"
 
 #. module: rs_realstate
 #: model:ir.model,name:rs_realstate.model_rs_estate_property_offer
@@ -1399,16 +1472,22 @@ msgstr "rs.inmobiliaria.propiedad.oferta"
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property_offer.py:0
+#, fuzzy
 msgid ""
 "🏁 Property SOLD via offer from \n"
 "%s\n"
 " for \n"
 "%s %s\n"
 msgstr ""
+"🏁 Propiedad VENDIDA mediante oferta de \n"
+"%s\n"
+" por \n"
+"%s %s\n"
 
 #. module: rs_realstate
 #. odoo-python
 #: code:addons/rs_realstate/models/estate_property.py:0
+#, fuzzy
 msgid ""
 "🏁 Property SOLD via offer from \n"
 "%s\n"
@@ -1416,3 +1495,8 @@ msgid ""
 "%s %s\n"
 " %s"
 msgstr ""
+"🏁 Propiedad VENDIDA mediante oferta de \n"
+"%s\n"
+" por \n"
+"%s %s\n"
+" %s"
