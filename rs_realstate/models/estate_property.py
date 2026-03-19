@@ -81,6 +81,12 @@ class EstateProperty(models.Model):
         string="Salesperson",
         readonly=False, index=True,
         tracking=True,)
+    
+    salesman_name = fields.Char(
+        related="user_id.display_name"
+    )
+    
+    
 
     brochure = fields.Binary(string='Brochure')
 
@@ -119,7 +125,7 @@ class EstateProperty(models.Model):
         string='Property Address',
         comodel_name='res.partner',
         ondelete='restrict',
-    )
+    )    
 
     offer_count = fields.Integer(string='Offers',
         compute='_compute_offer_count' )
