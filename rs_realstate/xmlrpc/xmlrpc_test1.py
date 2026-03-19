@@ -2,7 +2,7 @@ import xmlrpc.client
 
 # Configuración de conexión
 url = "http://localhost:8069"
-db = "devel"
+db = "odoodemo18"
 username = "admin"
 password = "admin"
 

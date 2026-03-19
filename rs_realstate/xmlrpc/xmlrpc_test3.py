@@ -19,14 +19,13 @@ properties = models.execute_kw(
     password,
     "estate.property",
     "search_read",
-    [[]],
+    [[["state", "=", "draft"]]],
     {
-        "fields": ["id", "name", "expected_price", "selling_price", "state"],
-        "order": "id asc"
+        "fields": ["id", "name", "expected_price", "state"]
     }
 )
 
-print("\nListado de estate.property:\n")
+print("\nListado de estate.property state draft:\n")
 for prop in properties:
     print(
         f"ID: {prop['id']} | "
