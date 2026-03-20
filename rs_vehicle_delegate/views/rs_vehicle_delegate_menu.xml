@@ -2,7 +2,7 @@
 <odoo>
     <!-- Menú raíz -->
     <menuitem id="menu_vehicle_root" name="Vehicles" sequence="10"
-    
+        web_icon="rs_vehicle_delegate,static/src/img/vehicle_icon.png"
     />
 
     <menuitem id="menu_vehicle_auto"
@@ -29,6 +29,6 @@
               parent="menu_vehicle_root"
               action="action_vehicle_auto_amphibious"
               sequence="20"/>
-              
-                     
+
+
 </odoo>
