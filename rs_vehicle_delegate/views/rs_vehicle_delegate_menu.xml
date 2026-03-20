@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Menú raíz -->
+    <menuitem id="menu_vehicle_root" name="Vehicles" sequence="10"
+    
+    />
+
+    <menuitem id="menu_vehicle_auto"
+              name="Autos"
+              parent="menu_vehicle_root"
+              action="action_vehicle_auto"
+              sequence="10"/>
+
+       <menuitem id="menu_vehicle_auto_flying"
+              name="Flying"
+              parent="menu_vehicle_root"
+              action="action_vehicle_auto_flying"
+              sequence="30"/>
+
+
+    <menuitem id="menu_vehicle_auto_sport"
+              name="Sport"
+              parent="menu_vehicle_root"
+              action="action_vehicle_auto_sport"
+              sequence="40"/>
+
+     <menuitem id="menu_vehicle_auto_amphibious"
+              name="Amphibious"
+              parent="menu_vehicle_root"
+              action="action_vehicle_auto_amphibious"
+              sequence="20"/>
+              
+                     
+</odoo>

@@ -86,11 +86,16 @@ class OfferAsistantWizard(models.TransientModel):
 
         self.write({'property_id': prop.id, 'offer_id': offer.id})
 
+        #view = self.env.ref('rs_realstate.view_estate_property_form')
+
+
+
         return {
             'type': 'ir.actions.act_window',
             'name': _('Property'),
             'res_model': 'estate.property',
             'view_mode': 'form',
+            'view_ids': [(self.env.ref('rs_realstate.view_estate_property_form').id, 'form')],            
             'res_id': prop.id,
             'target': 'current',
         }

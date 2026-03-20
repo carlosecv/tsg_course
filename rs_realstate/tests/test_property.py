@@ -27,4 +27,7 @@ class TestEstateProperty(TransactionCase):
             'garden': True,
             'garden_area': 30,
         })
+        #self.assertEqual(self.property.total_area, 120)
+        #self.assertEqual(self.property.total_area, 130)
+        #self.assertEqual(self.property.total_area, 140)
         self.assertEqual(self.property.total_area, 150)

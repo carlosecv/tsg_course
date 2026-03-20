@@ -25,7 +25,6 @@ properties = models.execute_kw(
         "order": "id asc"
     }
 )
-
 print("\nListado de estate.property:\n")
 for prop in properties:
     print(

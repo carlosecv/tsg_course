@@ -347,4 +347,4 @@ class EstateProperty(models.Model):
                 or self.env.lang
                 or 'en_US'
                 )
-        template.with_context(lang=lang).send_mail(self.id, force_send=True)
+        template.with_context(lang=lang).send_mail(self.id, force_send=False)

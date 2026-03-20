@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- =========================
+         AUTOS BASE
+    ========================== -->
+    <record id="view_vehicle_auto_list" model="ir.ui.view">
+        <field name="name">vehicle.auto.list</field>
+        <field name="model">vehicle.auto</field>
+        <field name="arch" type="xml">
+            <list string="Autos">
+                <field name="name"/>
+                <field name="brand"/>
+                <field name="model_name"/>
+                <field name="year"/>
+                <field name="color"/>
+                <field name="max_speed"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_vehicle_auto_form" model="ir.ui.view">
+        <field name="name">vehicle.auto.form</field>
+        <field name="model">vehicle.auto</field>
+        <field name="arch" type="xml">
+            <form string="Auto">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="brand"/>
+                            <field name="model_name"/>
+                            <field name="year"/>
+                        </group>
+                        <group>
+                            <field name="color"/>
+                            <field name="max_speed"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_vehicle_auto" model="ir.actions.act_window">
+        <field name="name">Autos</field>
+        <field name="res_model">vehicle.auto</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    
+</odoo>

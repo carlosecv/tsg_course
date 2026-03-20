@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vehicle_auto_user,vehicle.auto.user,model_vehicle_auto,base.group_user,1,1,1,1
+access_vehicle_auto_amphibious_user,vehicle.auto.amphibious.user,model_vehicle_auto_amphibious,base.group_user,1,1,1,1
+access_vehicle_auto_flying_user,vehicle.auto.flying.user,model_vehicle_auto_flying,base.group_user,1,1,1,1
+access_vehicle_auto_sport_user,vehicle.auto.sport.user,model_vehicle_auto_sport,base.group_user,1,1,1,1

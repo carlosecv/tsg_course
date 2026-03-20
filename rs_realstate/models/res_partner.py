@@ -9,5 +9,5 @@ class ResPartner(models.Model):
     
     is_property = fields.Boolean()
 
-
+    
     

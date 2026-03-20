@@ -35,7 +35,7 @@ class TestOfferAssistantWizard(TransactionCase):
 
     def test_wizard_form_flow(self):
         with Form(self.env['offer.asistant.wizard']) as form:
-            form.address_id = self.address
+            #form.address_id = self.address
             form.customer_id = self.customer
             form.selling_price = 150000
             form.price = 120000
